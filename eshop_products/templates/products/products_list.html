@@ -1,46 +1,272 @@
-{% extends 'shared/_MainLayout.html' %}
 {% load static %}
-{% load render_partial %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-    <section>
-        <div class="container">
-            <div class="row">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <link rel="stylesheet" href="{% static './css/totalProducts.css' %}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
 
-                <div class="col-sm-9 padding-right">
-                    <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">لیست محصولات</h2>
-                        {% for product in page_obj %}
-                            {% include 'products/product_item_component.html' with product=product %}
-                        {% endfor %}
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a class="logo" href="./index.html">
+                        <img src="./images/لوگو هران 1.png" alt="">
+                    </a>
+
+                </li>
+
+                <li> <a href="">صفحه اصلی</a></li>
+                <li> <a href="">محصولات ما</a> </li>
+                <li> <a href="">دسته بندی ها </a> </li>
+                <li> <a href=""> نمونه کارها</a> </li>
+                <li> <a href="">اعطای نمایندگی</a></li>
+            </ul>
+
+            <ul class="left-menu">
+                <li><img src="{% static './images/shopping-cart.png' %}" alt=""></li>
+                <li>
+                    <a href=""> ورود / ثبت نام</a>
+                </li>
+                <li>
+                    <img src="{% static './images/Vector.png' %}" alt="">
+                </li>
+                <li>
+                    <img src="{% static './images/menu.png' %}" alt="">
+                </li>
+            </ul>
+
+        </nav>
+        <div class="searchBox">
+            <input class="search" type="text" name="search" id="search-input" placeholder="لوستر">
+            <button class="search_logo">
+                <img src="{% static './images/Frame.png' %}" alt="">
+            </button>
+        </div>
+    </header>
 
 
-                        <div class="clearfix"></div>
-                        <ul class="pagination">
-                            {% if page_obj.has_previous %}
-                                <li><a href="?page={{ page_obj.previous_page_number }}">قبلی</a></li>
-                            {% endif %}
-                            {% for page in paginator.page_range %}
-                                {% if page == page_obj.number %}
-                                    <li class="active"><a href="?page={{ page }}">{{ page }}</a></li>
-                                {% else %}
-                                    <li><a href="?page={{ page }}">{{ page }}</a></li>
-                                {% endif %}
-                            {% endfor %}
-                            {% if page_obj.has_next %}
-                                <li><a href="?page={{ page_obj.next_page_number }}">بعدی</a></li>
-                            {% endif %}
+    <main>
+        <div class="top-category">
+            <a href="#"> دسته بندی ها </a>
+            <span> / </span>
+            <a href="#"> روشنایی </a>
+            <span> / </span>
+            <a href="#"> لوستر </a>
+        </div>
+        <section class="container1">
+            <div class="sidebar">
+                <div class="first-section-ofsidebar">
+
+                    <div class="">
+                        <div onclick="dropdwonShow1()" class="first-section-ofsidebar-child " id="dropdown1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <p>روشنایی و نور پردازی</p>
+                            <img src="{% static './images/flash.png' %}" id="flash1" alt="">
+                        </div>
+                        <ul class="dropdown-menu-show" id="dropdown-menu-show1" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">لوستر</a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">آباژور </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">آویز </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">لامپ</a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">چراغ دیواری </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">چراغ سقفی </a></li>
                         </ul>
-                    </div><!--features_items-->
-                </div>
+                    </div>
 
-                <div class="col-sm-3">
-                    <div class="left-sidebar">
-                        {% render_partial 'products_categories_partial' %}
+                    <div class="dropdown ">
+                        <div onclick="dropdwonShow2()" class="first-section-ofsidebar-child " id="dropdown2"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <p> لوازم دکوراتیو </p>
+                            <img id="flash2" src="{% static './images/flash.png' %}" alt="">
+                        </div>
+                        <ul class="dropdown-menu-show " id="dropdown-menu-show2" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">ساعت</a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">آینه </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">گلدان </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#">آویز گلدان</a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#"> استند گلدان </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#"> کنسول </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#"> شلف </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#"> جاشمعی </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#"> جاعودی </a></li>
+                            <li><a class="dropdown-item dropdown-menu-show-li" href="#"> تابلو نقاشی </a></li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="first-section-ofsidebar-child">
+                        <p> محصولات دست بافت </p>
+                        <img src="{% static './images/flash.png' %}" alt="">
+                    </div>
+                    <div class="first-section-ofsidebar-child without-bordr-bottm">
+                        <p> میز و صندلی </p>
+                        <img src="{% static './images/flash.png' %}" alt="">
                     </div>
                 </div>
 
+                <div class="second-section-ofsidebar">
+                    <div class="ordering">
+                        <div class="ordering-title">
+                            <img src="./images/ordering.png" alt="">
+                            <p>مرتب سازی</p>
+                        </div>
+                        <div class="ordering-buttns">
+                            <button>پر بازدیدترین</button>
+                            <button>پر فروش ترین</button>
+                            <button> جدید ترین</button>
+                            <button>گران ترین</button>
+                            <button>ارزان ترین</button>
+                        </div>
+                    </div>
+                    <div class="hr-after-ordering"></div>
+
+
+                    <div class="therd-section-ofsidebar">
+
+                        <div class="therd-section-ofsidebar-child ">
+                            <p> میزان نوردهی </p>
+                            <img src="{% static './images/flash.png' %}" alt="">
+                        </div>
+                        <div class="therd-section-ofsidebar-child">
+                            <p> رنگ نور </p>
+                            <img src="{% static './images/flash.png' %}" alt="">
+                        </div>
+                        <div class="therd-section-ofsidebar-child">
+                            <p>رنگ بدنه </p>
+                            <img src="{% static './images/flash.png' %}" alt="">
+                        </div>
+                        <div class="therd-section-ofsidebar-child ">
+                            <p>جنس بدنه </p>
+                            <img src="./images/flash.png" alt="">
+                        </div>
+                        <div class="therd-section-ofsidebar-child ">
+                            <p> سرپیچ </p>
+                            <img src="./images/flash.png" alt="">
+                        </div>
+                        <div class="therd-section-ofsidebar-child ">
+                            <p> موجود است </p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="therd-section-ofsidebar-child ">
+                            <p> گارانتی دارد </p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="therd-section-ofsidebar-child ">
+                            <p> وارداتی </p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="price">
+                        <p>قیمت :</p>
+                        <div class="slider-wrapper-range">
+                            <div class="underlay-range">
+                                <div class="breakpoint-range"></div>
+                                <div class="breakpoint-range"></div>
+                            </div>
+                            <input id="myRange" step="1" name="foo" type="range" min="0" max="40"
+                                class="slider-range" />
+                        </div>
+                        <div class="range-priceNumber">
+                            <p>1000 +</p>
+                            <p> 100 - 1000</p>
+                            <p>100 -</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
             </div>
-        </div>
-    </section>
-{% endblock %}
+            <div class="products">
+                
+                {% for product in page_obj %}
+                    {% include 'products/product_item_component.html' with product=product %}
+                {% endfor %}
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <ul>
+            <li>
+                <a href="./index.html">
+                    <img src="{% static './images/لوگو هران 1.png' %}" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    دسترسی سریع به محصولات
+                </a>
+            </li>
+            <li>
+                <img src="{% static './images/instagram.png' %}" alt="">
+                <a href="">lusso.home_tehran</a>
+            </li>
+            <li>
+                <img src="./images/phone.png" alt="">
+                <span>07136295234 - 09015454118</س>
+            </li>
+            <li class="lastLi">
+                <div class="location">
+                    <img src="./images/location.png" alt="">
+                    <span>آدرس: شیراز - خیابان عفیف آباد - مجتمع تجاری سعدی - طبقه ۴ - واحد ۳۹</span>
+                </div>
+                <div class="namads">
+                    <img src="{% static './images/images (aeg1).png' %}" alt="">
+                    <img src="{% static './images/images.png' %}" alt="">
+                </div>
+                <div class="productsBtn">
+
+                    <button>مشاهده محصولات</button>
+                </div>
+            </li>
+            <li class="description">
+                <p> کلیه حقوق مادی و معنوی وبسایت متعلق به Lusso Home است.
+                    طراحی و توسعه توسط
+                    <span>وب آرکا</span>
+                </p>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="{% static './Js/totalproducts.js' %}"></script>
+
+    <!-- bootstrap scripts  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
