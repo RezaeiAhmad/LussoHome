@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lusso</title>
+  <!-- ....... google fonts (vazir) .........  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- style CSS -->
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <!-- Bootstrap CSS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header class="nav-fixed">
+    <nav>
+      <ul class="menu">
+        <li>
+          <a class="logo" href="./landing.html">
+            <img src="./assets/images/لوگو هران 1.png" alt="logo">
+          </a>
+
+        </li>
+
+        <li> <a href="./landing.html">صفحه اصلی</a></li>
+        <li class="menu-my-products"> <a href="./totalProducts.html">محصولات ما</a> </li>
+        <li> <a href="">دسته بندی ها </a> </li>
+        <li class="menu-example-works"> <a href=""> نمونه کارها</a> </li>
+        <li class="menu-namayandegi"> <a href="./representation.html">اعطای نمایندگی</a></li>
+      </ul>
+
+      <ul class="left-menu">
+        <li><img src="./assets/images/shopping-cart.png" alt="shoping-icon"></li>
+        <li class="left-menu-singup-login">
+          <a href="./singup.html"> ورود / ثبت نام</a>
+        </li>
+        <li>
+          <img src="./assets/images/Vector.png" alt="profile-icon" onclick="showDashbordMobile()" >
+        </li>
+        <li>
+          <img class="hamber-menu" src="./assets/images/menu.png" alt="hamber-menu-icon" onclick="showDashbord()">
+        </li>
+      </ul>
+
+    </nav>
+    <!-- ............ dashbord ..............  -->
+    <div class="dashbord" id="dashbord">
+      <img class="dashbord-close-icon desktop-width" id="close-icon" src="./assets/images/close-icon1.png" alt="close-icon"
+        onclick="hideDashbord()">
+      <img class="dashbord-profile-icon" src="./assets/images/profile-icon.png" alt="profile-icon">
+      <a href="" class="dashbord-my-profile">
+        <img class="dashbord-my-profile-icon" src="./assets/images/my-profile-icon.png" alt="profile-icon">
+        <span class="dashbord-my-profile-text">پروفایل من</span>
+      </a>
+      <a href="" class="dashbord-my-profile">
+        <img class="dashbord-my-profile-icon" src="./assets/images/3tik-icon.png" alt="3tik-icon">
+        <span class="dashbord-my-profile-text"> سفارشات من</span>
+      </a>
+      <a href="" class="dashbord-my-profile">
+        <img class="dashbord-my-profile-icon" src="./assets/images/location.png" alt="location-icon">
+        <span class="dashbord-my-profile-text"> آدرس</span>
+      </a>
+      <a href="" class="dashbord-my-profile">
+        <img class="dashbord-my-profile-icon" src="./assets/images/like-white.png" alt="like-icon">
+        <span class="dashbord-my-profile-text"> علاقمندی ها</span>
+      </a>
+      <a href="" class="dashbord-my-profile">
+        <img class="dashbord-my-profile-icon" src="./assets/images/about-us-icon.png" alt="about-us-icon">
+        <span class="dashbord-my-profile-text"> درباره ما</span>
+      </a>
+      <a href="" class="dashbord-my-profile">
+        <img class="dashbord-my-profile-icon" src="./assets/images/phone.png" alt="phone-icon">
+        <span class="dashbord-my-profile-text"> ارتباط با ما</span>
+      </a>
+      <a href="" class="last-dashbord-my-profile">
+        <img class="dashbord-my-profile-icon" src="./assets/images/exit-icon.png" alt="exit-icon">
+        <span class="dashbord-my-profile-text"> خروج از حساب کاربری </span>
+      </a>
+      <!-- ........ change dashbord on tablet size .......  -->
+      <a href="" class="tablet-dashbord-my-profile">
+        <span class="dashbord-my-profile-text">نمونه کارها</span>
+      </a>
+      <a href="./representation.html" class="tablet-dashbord-my-profile">
+        <span class="dashbord-my-profile-text">اعطای نمایندگی</span>
+      </a>
+      <a href="./totalProducts.html" class="tablet-dashbord-my-profile">
+        <span class="dashbord-my-profile-text">محصولات ما</span>
+      </a>
+    </div>
+
+    <!-- ....................... dashbord in mobile ..............  -->
+<div class="dashbord-mobile" id="dashbord-mobile">
+  <div class="dashbord-mobile-icons">
+    <img class="" src="./assets/images/profile-icon.png" alt="profile-icon">
+    <img id="close-icon" src="./assets/images/close-icon1.png" alt="close-icon"
+        onclick="hideDashbordMobile()">
+  </div>
+  <div class="dashbord-mobile-container">
+
+  
+  <div class="dashbord-mobile-row">
+    <a href="" class="dashbord-my-profile">
+      <img class="dashbord-my-profile-icon" src="./assets/images/my-profile-icon.png" alt="profile-icon">
+      <span class="dashbord-my-profile-text">پروفایل من</span>
+    </a>
+    <a href="" class="dashbord-my-profile justify-content-around mobile-padding-right">
+      <img class="dashbord-my-profile-icon dashbord-mobile-about-us" src="./assets/images/about-us-icon.png" alt="about-us-icon">
+      <span class="dashbord-my-profile-text margin-right-mobile"> درباره ما</span>
+    </a>
+  </div>
+  <div class="dashbord-mobile-row">
+    <a href="" class="dashbord-my-profile">
+      <img class="dashbord-my-profile-icon" src="./assets/images/3tik-icon.png" alt="3tik-icon">
+      <span class="dashbord-my-profile-text"> سفارشات من</span>
+    </a>
+    <a href="" class="dashbord-my-profile justify-content-around mobile-padding-right">
+      <img class="dashbord-my-profile-icon" src="./assets/images/phone.png" alt="phone-icon">
+      <span class="dashbord-my-profile-text margin-right-mobile"> ارتباط با ما</span>
+    </a>
+  </div>
+  <div class="dashbord-mobile-row">
+    <a href="" class="dashbord-my-profile">
+      <img class="dashbord-my-profile-icon" src="./assets/images/location.png" alt="location-icon">
+      <span class="dashbord-my-profile-text"> آدرس</span>
+    </a>
+    <a href="" class="dashbord-my-profile  justify-content-around mobile-padding-right">
+      <img class="dashbord-my-profile-icon  exit-mobile" src="./assets/images/exit-icon.png" alt="exit-icon">
+      <span class="dashbord-my-profile-text"> خروج از حساب کاربری </span>
+    </a>
+  </div>
+  <div class="dashbord-mobile-row">
+    <a href="" class="dashbord-my-profile border-0">
+      <img class="dashbord-my-profile-icon" src="./assets/images/like-white.png" alt="like-icon">
+      <span class="dashbord-my-profile-text"> علاقمندی ها</span>
+    </a>
+    <a href="" class="last-dashbord-my-profile">
+     
+    </a>
+  </div>
+ 
+
+  <div class="hr-bettwen-mobile"></div>
+</div>
+</div>
+
+
+
+<!-- ................... show menu in mobile .....................  -->
+    <div class="dashbord menu-mobile" id="menu-mobile">
+      <img class="dashbord-close-icon" id="close-icon" src="./assets/images/close-icon1.png" alt="close-icon"
+        onclick="hideMenu()">
+      <img class="dashbord-profile-icon" src="./assets/images/profile-icon.png" alt="profile-icon">
+      <a href="./landing.html" class="dashbord-my-profile"> 
+        <span class="dashbord-my-profile-text"> صفحه اصلی</span>
+      </a>
+      <a href="./totalProducts.html" class="dashbord-my-profile">
+        <span class="dashbord-my-profile-text">  محصولات ما</span>
+      </a>
+      <a href="" class="dashbord-my-profile">
+        
+        <span class="dashbord-my-profile-text"> دسته بندی ها</span>
+      </a>
+      <a href="" class="dashbord-my-profile">
+        <span class="dashbord-my-profile-text">  نمونه کارها</span>
+      </a>
+      <a href="./representation.html" class="last-dashbord-my-profile">
+        <span class="dashbord-my-profile-text">    اعطای نمایندگی </span>
+      </a>
+      <!-- ........ change dashbord on tablet size .......  -->
+      <a href="" class="tablet-dashbord-my-profile tablet">
+        <span class="dashbord-my-profile-text">نمونه کارها</span>
+      </a>
+      <a href="./representation.html" class="tablet-dashbord-my-profile tablet">
+        <span class="dashbord-my-profile-text">اعطای نمایندگی</span>
+      </a>
+      <a href="./totalProducts.html" class="tablet-dashbord-my-profile tablet">
+        <span class="dashbord-my-profile-text">محصولات ما</span>
+      </a>
+    </div>
+  </header>
+  <main>
+    <!-- .......... hero slider  --------------  -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/images/Group 498 (2).png" class="imageloster " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/Group 499.png" class="imageloster" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="./assets/images/Group 500.png" class="imageloster" alt="...">
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------- hero content ----------  -->
+    <!-- .......... just show in mobile size ..........  -->
+    <section class="heroSection-in-mobile">
+      <nav class="heroSection-in-mobile-nav">
+        <img class="heroSection-in-mobile-nav-logo" src="./assets/images/لوگو هران 1.png" alt="losso-logo">
+        <div class="heroSection-in-mobile-nav-icons">
+          <img src="./assets/images/Vector.png" alt="profile-icon" onclick="showDashbordMobile()" >
+          <img class="hamber-menu" src="./assets/images/menu.png" alt="hamber-menu-icon" onclick="showMenu()">
+        </div>
+      </nav>
+      <div class="heroSection-in-mobile-text">
+        <h1>لورم ایپسوم</h1>
+        <h3>طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه</h3>
+      </div>
+      <div>
+        <img class="heroBg-mobile" src="./assets/images/bgHero-mobile.png" alt="hero-img">
+        <div class="searchBox-mobile">
+          <input class="search-mobile" type="text" name="search" id="search-input" placeholder="لوستر">
+          <button class="search_logo-mobile">
+              <img src="./assets/images/Frame.png" alt="search-icon">
+          </button>
+      </div>
+      
+      </div>
+      <div class="mobile-bottom-nav">
+        <a href="">دسته بندی ها</a>
+        <div class="like-hr-mobile"></div>
+        <a href="">
+          <img src="./assets/images/Vector.png" alt="profile-icon">
+        </a>
+        <div class="like-hr-mobile"></div>
+        <a href="">
+          <img src="./assets/images/shopping-cart.png" alt="shoping-card">
+        </a>
+      </div>
+    </section>
+    <!-- ..... end of menu in mobile ....  -->
+    <section class="heroSection">
+
+      <h1>لورم ایپسوم</h1>
+      <div class="searchBox">
+        <input class="search" type="text" name="search" id="search-input" placeholder="لوستر">
+        <button class="search_logo">
+          <img src="./assets/images/Frame.png" alt="">
+        </button>
+      </div>
+      <h2>طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه</h2>
+      <h3>
+        طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه
+      </h3>
+    </section>
+    <!-- ............ lighting just show on mobile ...............  -->
+    <section class="lighting-in-mobile">
+    <img class="loster-img" src="./assets/images/lostertest.png" alt="loster">
+    <div class="lightin-loster-mobile">
+      <p class="lightin-loster-mobile-tilte">روشنایی</p>
+      <div class="Lighting-loster-btn-mobile">
+        <hr>
+        <button>لوستر</button>
+      </div>
+    </div>
+
+    <img class="abazhor-img" src="./assets/images/abazhor.png" alt="abazhor">
+    <div class="lightin-abazhor-mobile">
+      <p class="lightin-abazhor-mobile-tilte">روشنایی</p>
+      <div class="Lighting-abazhor-btn-mobile">
+        <button>آباژور</button>
+        <hr>
+      </div>
+    </div>
+  </section>
+    <!-- ----------------- lighting section ------------  -->
+    <section class="Lighting">
+      <img class="loster-img" src="./assets/images/lostertest.png" alt="loster">
+      <div class="lighting--btnsBox">
+        <h2>روشنایی</h2>
+        <div class="Lighting-loster">
+          <hr>
+          <button>لوستر</button>
+        </div>
+      </div>
+      <div class="Lighting-abazhor">
+        <button>آباژور</button>
+        <hr>
+      </div>
+      <div class="abazhor-img">
+        <img class="abazhor" src="./assets/images/abazhor.png" alt="">
+      </div>
+    </section>
+    <!-- ........... category section ...........  -->
+    <section class="category" id="category">
+      <h1>
+        دسته بندی ها
+      </h1>
+      <div class="category-box">
+        <div>
+          <button id="lightbtn">
+            روشنایی و نور پردازی
+          </button>
+          <button id="tablebtn">
+            میز و صندلی
+          </button>
+        </div>
+
+        <div class="category--second-box">
+          <button id="Decorbtn">
+            لوازم دکوراتیو
+          </button>
+
+          <button id="handmadebtn">
+            محصولات دست بافت
+          </button>
+        </div>
+      </div>
+    </section>
+    <hr class="betweenSections">
+    <!-- .............. slider section ..........  -->
+    <section class="slidersSection">
+      <div class="catgory-buttonsBox">
+        <button>
+          پر بازدیدترین
+        </button>
+        <button>
+          جدیدترین ها
+        </button>
+        <button>
+          تخفیف خورده ها
+        </button>
+      </div>
+
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper custom-swiper-wrapper ">
+          <div class="swiper-slide custom-swiper-slide ">
+            <img class="" src="./assets/images/loster-card.png" alt="Card image cap">
+            <div class="body-card">
+              <h5 class="">لوستر فلان</h5>
+              <div class="price-card">
+                <span class="badge-price">
+                  8%
+                </span>
+                <span class="price">
+                  15,699,000
+                </span>
+              </div>
+              <p class="line-through">17,000,000</p>
+              <p class="time">08:43:47</p>
+            </div>
+          </div>
+          <div class="swiper-slide custom-swiper-slide ">
+            <img class="" src="./assets/images/product-t-m2.png" alt="Card image cap">
+            <div class="body-card">
+              <h5 class="">لوستر فلان</h5>
+              <div class="price-card">
+                <span class="badge-price">
+                  8%
+                </span>
+                <span class="price">
+                  15,699,000
+                </span>
+              </div>
+              <p class="line-through">17,000,000</p>
+              <p class="time">08:43:47</p>
+            </div>
+          </div>
+          <div class="swiper-slide custom-swiper-slide ">
+            <img class="" src="./assets/images/loster-card.png" alt="Card image cap">
+            <div class="body-card">
+              <h5 class="">لوستر فلان</h5>
+              <div class="price-card">
+                <span class="badge-price">
+                  8%
+                </span>
+                <span class="price">
+                  15,699,000
+                </span>
+              </div>
+              <p class="line-through">17,000,000</p>
+              <p class="time">08:43:47</p>
+            </div>
+          </div>
+          <div class="swiper-slide custom-swiper-slide">Slide 4</div>
+          <div class="swiper-slide custom-swiper-slide">Slide 5</div>
+          <div class="swiper-slide custom-swiper-slide">Slide 6</div>
+          <div class="swiper-slide custom-swiper-slide">Slide 7</div>
+          <div class="swiper-slide custom-swiper-slide">Slide 8</div>
+          <div class="swiper-slide custom-swiper-slide">Slide 9</div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+      </div>
+      <div class="swiper-button-next custom-swiper-button-next"></div>
+      <div class="swiper-button-prev custom-swiper-button-left"></div>
+    </section>
+    <!-- ............... co-workers just show in mobile ................  -->
+    <section class="co-workers-in-mobile">
+      <div>
+        <img class="border-left-mobile border-bottom-mobile" src="./assets/images/لوگو هران 1.png" alt="">
+        <img class="border-bottom-mobile margin-right-mobile" src="./assets/images/لوگو هران 1.png" alt="">
+      </div>
+      <div>
+        <img class="border-left-mobile" src="./assets/images/لوگو هران 1.png" alt="">
+        <img class="margin-right-mobile" src="./assets/images/لوگو هران 1.png" alt="">
+      </div>
+    </section>
+    <!-- ..............  co-workers section ----------------  -->
+    <section class="co-workers">
+      <div class="co-workers-box">
+        <div><img src="./assets/images/لوگو هران 1.png" alt=""></div>
+        <div class="border-left"></div>
+        <div><img src="./assets/images/لوگو هران 1.png" alt=""></div>
+        <div class="border-left"></div>
+        <div><img src="./assets/images/لوگو هران 1.png" alt=""></div>
+        <div class="border-left"></div>
+        <div><img src="./assets/images/لوگو هران 1.png" alt=""></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <ul>
+      <li>
+        <a href="./index.html">
+          <img class="footer-logo" src="./assets/images/لوگو هران 1.png" alt="">
+        </a>
+      </li>
+      <li class="mobile-border-bottom">
+        <a href="">
+          دسترسی سریع به محصولات
+        </a>
+      </li>
+      <li>
+        <img src="./assets/images/instagram.png" alt="">
+        <a href="">lusso.home_tehran</a>
+      </li>
+      <li class="footer-call-info">
+        <img src="./assets/images/phone.png" alt="">
+        <span>07136295234 - 09015454118</span>
+      </li>
+      <li class="lastLi">
+        <div class="location">
+          <img src="./assets/images/location.png" alt="">
+          <span>آدرس: شیراز - خیابان عفیف آباد - مجتمع تجاری سعدی - طبقه ۴ - واحد ۳۹</span>
+        </div>
+        <div class="namads">
+          <img src="./assets/images/images (aeg1).png" alt="">
+          <img src="./assets/images/images.png" alt="">
+        </div>
+        <div class="productsBtn">
+
+          <button>مشاهده محصولات</button>
+        </div>
+      </li>
+      <li class="description">
+        <p> کلیه حقوق مادی و معنوی وبسایت متعلق به Lusso Home است.
+          طراحی و توسعه توسط
+          <span>وب آرکا</span>
+        </p>
+      </li>
+    </ul>
+  </footer>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 1,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        // when window width is >= 1024px
+
+        1025: {
+          slidesPerView: 3,
+        },
+
+        768: {
+          slidesPerView: 2,
+        }
+        ,
+
+        320: {
+          slidesPerView: 1,
+        }
+
+      },
+    });
+  </script>
+  <!-- swiper js  -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/Js/main.js"></script>
+</body>
+
+</html>

@@ -6,7 +6,7 @@ from django.views.generic import ListView
 from eshop_order.forms import UserNewOrderForm
 from .models import Product, ProductGallery
 from django.http import Http404
-from eshop_products_category.models import ProductCategory
+from eshop_products_category.models import ProductCategory, MainCategory
 
 
 # Create your views here.
@@ -84,7 +84,10 @@ class SearchProductsView(ListView):
 
 def products_categories_partial(request):
     categories = ProductCategory.objects.all()
+    maincategories = MainCategory.objects.all()
+    
     context = {
-        'categories': categories
+        'categories': categories,
+        'maincategories': maincategories
     }
     return render(request, 'products/products_categories_partial.html', context)

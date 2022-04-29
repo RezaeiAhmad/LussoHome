@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="fa">
 
 <head>
@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product</title>
 
-   
+     <!-- ....... google fonts (vazir) .........  -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;600&display=swap" rel="stylesheet">
    <!-- Link Swiper's CSS -->
    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -23,46 +26,230 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul class="menu">
-                <li>
-                    <a class="logo" href="./index.html">
-                        <img src="./images/لوگو هران 1.png" alt="">
-                    </a>
+  <header class="nav-fixed">
+    <nav>
+        <ul class="menu">
+            <li>
+                <a class="logo" href="./landing.html">
+                    <img src="{% static './images/لوگو هران 1.png' %}" alt="logo">
+                </a>
+            </li>
 
-                </li>
+            <li> <a href="./landing.html">صفحه اصلی</a></li>
+            <li class="menu-my-products"> <a href="./totalProducts.html">محصولات ما</a> </li>
+            <li> <a href="">دسته بندی ها </a> </li>
+            <li class="menu-example-works"> <a href=""> نمونه کارها</a> </li>
+            <li class="menu-namayandegi"> <a href="./representation.html">اعطای نمایندگی</a></li>
+        </ul>
 
-                <li> <a href="">صفحه اصلی</a></li>
-                <li> <a href="">محصولات ما</a> </li>
-                <li> <a href="">دسته بندی ها </a> </li>
-                <li> <a href=""> نمونه کارها</a> </li>
-                <li> <a href="">اعطای نمایندگی</a></li>
-            </ul>
+        <ul class="left-menu">
+            <li><img src="{% static './images/shopping-cart.png' %}" alt="shoping-icon"></li>
+            <li class="left-menu-singup-login">
+                <a href="./singup.html"> ورود / ثبت نام</a>
+            </li>
+            <li>
+                <img src="{% static './images/Vector.png' %}" alt="profile-icon" onclick="showDashbordMobile()">
+            </li>
+            <li>
+                <img class="hamber-menu" src="{% static './images/menu.png' %}" alt="hamber-menu-icon"
+                    onclick="showDashbord()">
+            </li>
+        </ul>
 
-            <ul class="left-menu">
-                <li><img src="{% static './images/shopping-cart.png' %}" alt=""></li>
-                <li>
-                    <a href=""> ورود / ثبت نام</a>
-                </li>
-                <li>
-                    <img src="{% static './images/Vector.png' %}" alt="">
-                </li>
-                <li>
-                    <img src="{% static './images/menu.png' %}" alt="">
-                </li>
-            </ul>
 
-        </nav>
-        <div class="searchBox">
-            <input class="search" type="text" name="search" id="search-input" placeholder="لوستر">
-            <button class="search_logo">
-                <img src="{% static './images/Frame.png' %}" alt="">
-            </button>
+    </nav>
+    <!-- .............. search Box .............  -->
+    <div class="searchBox">
+        <input class="search" type="text" name="search" id="search-input" placeholder="لوستر">
+        <button class="search_logo">
+            <img src="{% static './images/Frame.png' %}" alt="search-icon">
+        </button>
+    </div>
+    <!-- ........ end of search box ........  -->
+
+    <!-- ............ dashbord ..............  -->
+    <div class="dashbord" id="dashbord">
+        <img class="dashbord-close-icon desktop-width" id="close-icon" src="{% static './images/close-icon1.png' %}"
+            alt="close-icon" onclick="hideDashbord()">
+        <img class="dashbord-profile-icon" src="{% static './images/profile-icon.png' %}" alt="profile-icon">
+        <a href="" class="dashbord-my-profile">
+            <img class="dashbord-my-profile-icon" src="{% static './images/my-profile-icon.png' %}" alt="profile-icon">
+            <span class="dashbord-my-profile-text">پروفایل من</span>
+        </a>
+        <a href="" class="dashbord-my-profile">
+            <img class="dashbord-my-profile-icon" src="{% static './images/3tik-icon.png' %}" alt="3tik-icon">
+            <span class="dashbord-my-profile-text"> سفارشات من</span>
+        </a>
+        <a href="" class="dashbord-my-profile">
+            <img class="dashbord-my-profile-icon" src="{% static './images/location.png' %}" alt="location-icon">
+            <span class="dashbord-my-profile-text"> آدرس</span>
+        </a>
+        <a href="" class="dashbord-my-profile">
+            <img class="dashbord-my-profile-icon" src="{% static './images/like-white.png' %}" alt="like-icon">
+            <span class="dashbord-my-profile-text"> علاقمندی ها</span>
+        </a>
+        <a href="" class="dashbord-my-profile">
+            <img class="dashbord-my-profile-icon" src="{% static './images/about-us-icon.png' %}" alt="about-us-icon">
+            <span class="dashbord-my-profile-text"> درباره ما</span>
+        </a>
+        <a href="" class="dashbord-my-profile">
+            <img class="dashbord-my-profile-icon" src="{% static './images/phone.png' %}" alt="phone-icon">
+            <span class="dashbord-my-profile-text"> ارتباط با ما</span>
+        </a>
+        <a href="" class="last-dashbord-my-profile">
+            <img class="dashbord-my-profile-icon" src="{% static './images/exit-icon.png' %}" alt="exit-icon">
+            <span class="dashbord-my-profile-text"> خروج از حساب کاربری </span>
+        </a>
+        <!-- ........ change dashbord on tablet size .......  -->
+        <a href="" class="tablet-dashbord-my-profile">
+            <span class="dashbord-my-profile-text">نمونه کارها</span>
+        </a>
+        <a href="./representation.html" class="tablet-dashbord-my-profile">
+            <span class="dashbord-my-profile-text">اعطای نمایندگی</span>
+        </a>
+        <a href="./totalProducts.html" class="tablet-dashbord-my-profile">
+            <span class="dashbord-my-profile-text">محصولات ما</span>
+        </a>
+    </div>
+
+    <!-- ....................... dashbord in mobile ..............  -->
+    <div class="dashbord-mobile" id="dashbord-mobile">
+        <div class="dashbord-mobile-icons">
+            <img class="" src="{% static './images/profile-icon.png' %}" alt="profile-icon">
+            <img id="close-icon" src="{% static './images/close-icon1.png' %}" alt="close-icon"
+                onclick="hideDashbordMobile()">
         </div>
-    </header>
+        <div class="dashbord-mobile-container">
+
+
+            <div class="dashbord-mobile-row">
+                <a href="" class="dashbord-my-profile">
+                    <img class="dashbord-my-profile-icon" src="{% static './images/my-profile-icon.png' %}"
+                        alt="profile-icon">
+                    <span class="dashbord-my-profile-text">پروفایل من</span>
+                </a>
+                <a href="" class="dashbord-my-profile justify-content-around mobile-padding-right">
+                    <img class="dashbord-my-profile-icon dashbord-mobile-about-us"
+                        src="{% static './images/about-us-icon.png' %}" alt="about-us-icon">
+                    <span class="dashbord-my-profile-text margin-right-mobile"> درباره ما</span>
+                </a>
+            </div>
+            <div class="dashbord-mobile-row">
+                <a href="" class="dashbord-my-profile">
+                    <img class="dashbord-my-profile-icon" src="{% static './images/3tik-icon.png' %}" alt="3tik-icon">
+                    <span class="dashbord-my-profile-text"> سفارشات من</span>
+                </a>
+                <a href="" class="dashbord-my-profile justify-content-around mobile-padding-right">
+                    <img class="dashbord-my-profile-icon" src="{% static './images/phone.png' %}" alt="phone-icon">
+                    <span class="dashbord-my-profile-text margin-right-mobile"> ارتباط با ما</span>
+                </a>
+            </div>
+            <div class="dashbord-mobile-row">
+                <a href="" class="dashbord-my-profile">
+                    <img class="dashbord-my-profile-icon" src="{% static './images/location.png' %}" alt="location-icon">
+                    <span class="dashbord-my-profile-text"> آدرس</span>
+                </a>
+                <a href="" class="dashbord-my-profile  justify-content-around mobile-padding-right">
+                    <img class="dashbord-my-profile-icon  exit-mobile" src="{% static './images/exit-icon.png' %}"
+                        alt="exit-icon">
+                    <span class="dashbord-my-profile-text"> خروج از حساب کاربری </span>
+                </a>
+            </div>
+            <div class="dashbord-mobile-row">
+                <a href="" class="dashbord-my-profile border-0">
+                    <img class="dashbord-my-profile-icon" src="{% static './images/like-white.png' %}" alt="like-icon">
+                    <span class="dashbord-my-profile-text"> علاقمندی ها</span>
+                </a>
+                <a href="" class="last-dashbord-my-profile">
+
+                </a>
+            </div>
+
+
+            <div class="hr-bettwen-mobile"></div>
+        </div>
+    </div>
+
+
+
+    <!-- ................... show menu in mobile .....................  -->
+    <div class="dashbord menu-mobile" id="menu-mobile">
+        <img class="dashbord-close-icon" id="close-icon" src="{% static './images/close-icon1.png' %}" alt="close-icon"
+            onclick="hideMenu()">
+        <img class="dashbord-profile-icon" src="{% static './images/profile-icon.png' %}" alt="profile-icon">
+        <a href="./landing.html" class="dashbord-my-profile">
+
+            <span class="dashbord-my-profile-text"> صفحه اصلی</span>
+        </a>
+        <a href="./totalProducts.html" class="dashbord-my-profile">
+
+            <span class="dashbord-my-profile-text"> محصولات ما</span>
+        </a>
+        <a href="" class="dashbord-my-profile">
+
+            <span class="dashbord-my-profile-text"> دسته بندی ها</span>
+        </a>
+        <a href="" class="dashbord-my-profile">
+
+            <span class="dashbord-my-profile-text"> نمونه کارها</span>
+        </a>
+        <a href="./representation.html" class="last-dashbord-my-profile">
+
+            <span class="dashbord-my-profile-text"> اعطای نمایندگی </span>
+        </a>
+        <!-- ........ change dashbord on tablet size .......  -->
+        <a href="" class="tablet-dashbord-my-profile tablet">
+            <span class="dashbord-my-profile-text">نمونه کارها</span>
+        </a>
+        <a href="./representation.html" class="tablet-dashbord-my-profile tablet">
+            <span class="dashbord-my-profile-text">اعطای نمایندگی</span>
+        </a>
+        <a href="./totalProducts.html" class="tablet-dashbord-my-profile tablet">
+            <span class="dashbord-my-profile-text">محصولات ما</span>
+        </a>
+    </div>
+
+</header>
 
     <main>
+
+ <!-- .......... just show in mobile size ..........  -->
+ <section class="heroSection-in-mobile">
+    <nav class="heroSection-in-mobile-nav">
+      <img class="heroSection-in-mobile-nav-logo" src="{% static './images/لوگو هران 1.png' %}" alt="losso-logo">
+      <div class="heroSection-in-mobile-nav-icons">
+        <img src="{% static './images/Vector.png' %}" alt="profile-icon" onclick="showDashbordMobile()" >
+        <img class="hamber-menu" src="{% static './images/menu.png' %}" alt="hamber-menu-icon" onclick="showMenu()">
+      </div>
+    </nav>
+    <div class="heroSection-in-mobile-text">
+      <h1>لورم ایپسوم</h1>
+      <h3>طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه</h3>
+    </div>
+    <div>
+      <img class="heroBg-mobile" src="{% static './images/bgHero-mobile.png' %}" alt="hero-img">
+      <div class="searchBox-mobile">
+        <input class="search-mobile" type="text" name="search" id="search-input" placeholder="لوستر">
+        <button class="search_logo-mobile">
+            <img src="{% static './images/Frame.png' %}" alt="">
+        </button>
+    </div>
+    
+    </div>
+    <div class="mobile-bottom-nav">
+      <a href="">دسته بندی ها</a>
+      <div class="like-hr-mobile"></div>
+      <a href="">
+        <img src="{% static './images/Vector.png' %}" alt="profile-icon">
+      </a>
+      <div class="like-hr-mobile"></div>
+      <a href="">
+        <img src="{% static './images/shopping-cart.png' %}" alt="shoping-card">
+      </a>
+    </div>
+  </section>
+  <!-- ..... end of menu in mobile ....  -->
+
         <div class="top-category">
             <a href="#"> دسته بندی ها </a>
             <span> / </span>
@@ -77,58 +264,58 @@
                 <img src="{% static './images/notification-icon.png' %}" alt="notification-icon">
             </div>
 
-            <div class=" custom-container">
-                <div class="carousel-container position-relative row"
-                    style="overflow: hidden; width: 513px; height: 600px;">
+            <div class="custom-container">
+                <div class="carousel-container position-relative row custom-carousel-container"
+                    >
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-slide-number="0">
-                                <img src="{% static './images/camera-slider-img.png' %}" class="d-block custom-img" alt="..."
+                                <img src="{{ product.image.url }}" class="d-block custom-img" alt="..."
                                     data-remote="https://source.unsplash.com/Pn6iimgM-wo/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="1">
-                                <img src="https://source.unsplash.com/tXqVe7oO-go/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/tXqVe7oO-go/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="2">
-                                <img src="https://source.unsplash.com/qlYQb7B9vog/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/qlYQb7B9vog/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="3">
-                                <img src="https://source.unsplash.com/QfEfkWk1Uhk/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/QfEfkWk1Uhk/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="4">
-                                <img src="https://source.unsplash.com/CSIcgaLiFO0/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/CSIcgaLiFO0/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="5">
-                                <img src="https://source.unsplash.com/a_xa7RUKzdc/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/a_xa7RUKzdc/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="6">
-                                <img src="https://source.unsplash.com/uanoYn1AmPs/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/uanoYn1AmPs/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="7">
-                                <img src="https://source.unsplash.com/_snqARKTgoc/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/_snqARKTgoc/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="8">
-                                <img src="https://source.unsplash.com/M9F8VR0jEPM/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/M9F8VR0jEPM/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                             <div class="carousel-item" data-slide-number="9">
-                                <img src="https://source.unsplash.com/Q1p7bh3SHj8/1600x900/" class="d-block custom-img"
+                                <img src="{{ product.image.url }}" class="d-block custom-img"
                                     alt="..." data-remote="https://source.unsplash.com/Q1p7bh3SHj8/" data-type="image"
                                     data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
@@ -142,17 +329,17 @@
                                 <div class=" mx-0">
                                     <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected"
                                         data-target="#myCarousel" data-slide-to="0">
-                                        <img src="{% static './images/camera-slider-img.png' %}"
+                                        <img src="{{ product.image.url }}"
                                             class="img-fluid custom-img-fluid" alt="...">
                                     </div>
                                     <div id="carousel-selector-1" class="thumb col-4 col-sm-2 px-1 py-2"
                                         data-target="#myCarousel" data-slide-to="1">
-                                        <img src="https://source.unsplash.com/tXqVe7oO-go/600x400/"
+                                        <img src="{{ product.image.url }}"
                                             class="img-fluid custom-img-fluid" alt="...">
                                     </div>
                                     <div id="carousel-selector-2" class="thumb col-4 col-sm-2 px-1 py-2"
                                         data-target="#myCarousel" data-slide-to="2">
-                                        <img src="https://source.unsplash.com/qlYQb7B9vog/600x400/"
+                                        <img src="{{ product.image.url }}"
                                             class="img-fluid custom-img-fluid" alt="...">
                                     </div>
                                 </div>
@@ -161,17 +348,17 @@
                                 <div class=" mx-0">
                                     <div id="carousel-selector-6" class="thumb col-4 col-sm-2 px-1 py-2"
                                         data-target="#myCarousel" data-slide-to="6">
-                                        <img src="https://source.unsplash.com/uanoYn1AmPs/600x400/"
+                                        <img src="{{ product.image.url }}"
                                             class="img-fluid custom-img-fluid" alt="...">
                                     </div>
                                     <div id="carousel-selector-7" class="thumb col-4 col-sm-2 px-1 py-2"
                                         data-target="#myCarousel" data-slide-to="7">
-                                        <img src="https://source.unsplash.com/_snqARKTgoc/600x400/"
+                                        <img src="{{ product.image.url }}"
                                             class="img-fluid custom-img-fluid" alt="...">
                                     </div>
                                     <div id="carousel-selector-8" class="thumb col-4 col-sm-2 px-1 py-2"
                                         data-target="#myCarousel" data-slide-to="8">
-                                        <img src="https://source.unsplash.com/M9F8VR0jEPM/600x400/"
+                                        <img src="{{ product.image.url }}"
                                             class="img-fluid custom-img-fluid" alt="...">
                                     </div>
                                     <div class="col-2 px-1 py-2"></div>
@@ -199,22 +386,27 @@
             <div class="product-info">
                 <div class="product-description">
                     <div class="description-details">
-                        <h2>آباژور کد133</h2>
-                        <p>رنگ بدنه: مشکی</p>
+                        <h2>{{product.title}}</h2>
+                        <p>رنگ بدنه: {{product.color}}</p>
                         <div class="colors">
                             <span id="black"></span>
                             <span id="yellow"></span>
                             <span></span>
                         </div>
-                        <p>رنگ نور : افتابی مهتابی</p>
-                        <p>وزن:</p>
-                        <p>ابعاد:</p>
+                        <p>رنگ نور : {{product.lightcolor}}</p>
+                        <p>وزن:{{product.weight}}</p>
+                        <p>ابعاد:{{product.size}}</p>
                         <p>وارداتی</p>
                     </div>
                     <div class="description-price">
                         <div class="product-exist">
                             <img src="{% static './images/exist-product.png' %}" alt="exist-icon">
+                            {% if product.active == True %}
                             <p>موجود در انبار</p>
+                            {% endif %}
+                            {% if product.active == False %}
+                            <p>ناموجود در انبار</p>
+                            {% endif %}
                         </div>
                         <div class="garanti">
                             <img src="{% static './images/garanti.png' %}" alt="garanti-icon">
@@ -233,23 +425,32 @@
                         </div>
                         <div class="total-price">
                             <span>تومان</span>
-                            <h3>4,580,000</h3>
+                            <h3>{{product.price}}</h3>
                         </div>
                         <button class="add-to-card-btn" type="submit">
                             افزودن به سبد خرید
                         </button>
                     </div>
                 </div>
+                <div class="sellButton-fixed-bottom" id="sellButton-fixed-bottom">
+                  <button class="add-to-card-btn" type="submit">
+                    افزودن به سبد خرید
+                </button>
+                  <div class="total-price">
+                    <span>تومان</span>
+                    <h3>4,580,000</h3>
+                </div>
+                </div>
                 <div class="other-description">
                     <h3 class="other-description-title">
                         سایر توضیحات:
                     </h3>
-                    <p >میزان برق مصرفی</p>
-                    <p >میزان نوردهی:</p>
-                    <p class="last-other-description-p">میزان نوردهی:</p>
+                    <p >میزان برق مصرفی:{{product.elec}}</p>
+                    <p >میزان نوردهی:{{product.light}}</p>
+                    {% comment %} <p class="last-other-description-p">میزان نوردهی:</p> {% endcomment %}
                 </div>
                 <div class="help">
-                    <img src="./images/help.png" alt="help-icon">
+                    <img src="{% static './images/help.png' %}" alt="help-icon">
                     <span>نحوه ارسال سفارشات از طریق خود کاربر مشخص می شود و هزینه باربری و ارسال سفارشات بر اساس وزن
                         حجم بار و نحوه باربری می باشد. </span>
                 </div>
@@ -258,38 +459,52 @@
 
 
         </div>
+        <div class="other-description-tablet">
+            <h3 class="other-description-title-tablet">
+                سایر توضیحات:
+            </h3>
+            <p >میزان برق مصرفی</p>
+            <p >میزان نوردهی:</p>
+            <p class="last-other-description-p-tablet">میزان نوردهی:</p>
+        </div>
+        <div class="help-tablet">
+            <img src="{% static './images/help.png' %}" alt="help-icon">
+            <span>نحوه ارسال سفارشات از طریق خود کاربر مشخص می شود و هزینه باربری و ارسال سفارشات بر اساس وزن
+                حجم بار و نحوه باربری می باشد. </span>
+        </div>
         <section class="product-introduction">
             <h2 class="product-introduction-title">معرفی</h2>
-            <p>استفاده از چوب روس به رنگ قهوه ای تیره (سوخته )دارای پایه ها با قابلیت چرخش که باعث تنظیم زاویه بین پایه
-                ها و میزان ارتفاع می شود .تنوع گسترده در انتخاب رنگ کلاهک</p>
+            <p>{{product.description}}</p>
         </section>
 
         <section class="comments">
             <h2 class="comments-title">دیدگاه ها </h2>
+            <div class="comments-container">
             <div class="comment">
                 <div class="comment-user">
                     <div class="comment-user-info">
-                        <img class="comment-user-profile" src="./images/decor.png" alt="profile">
+                        <img class="comment-user-profile" src="{% static './images/decor.png' %}" alt="profile">
                         <h5 class="comment-user-name">زهرا صادقی</h5>
-                        <img class="comment-user-stars" src="./images/4stars.png" alt="stars">
+                        <img class="comment-user-stars" src="{% static './images/4stars.png' %}" alt="stars">
                     </div>
                     <div class="comment-user-date">
                         <p>خریدار</p>
                         <p>6 اسفند 1400</p>
                     </div>
                     <div class="comment-text">
-                        <span>زیباست جلوه خوبی داره امایکی ازپایهاحدود۳سانت کوچیکترازبقیه بود</span>
-                        <img src="./images/like-icon (2).png" alt="like-icon">
+                        <span>زیباست جلوه خوبی داره امایکی
+                           ازپایهاحدود۳سانت کوچیکترازبقیه بود</span>
+                        <img src="{% static './images/like-icon (2).png' %}" alt="like-icon">
                     </div>
                     <div class="comment-input">
                         <input type="text">
-                        <img src="./images/comment-icon.png" alt="comment-icon">
+                        <img src="{% static './images/comment-icon.png' %}" alt="comment-icon">
                     </div>
                 </div>
                 <div class="comment-upload">
                     <img  class="comment-image-upload" src="{% static './images/camera-slider-img.png' %}" alt="product-image">
                     <label for="inputTag" >
-                        <img class="comment-upload-icon" src="./images/download-icon.png" alt="download-icon"> <br />
+                        <img class="comment-upload-icon" src="{% static './images/download-icon.png' %}" alt="download-icon"> <br />
 
                         اپلود فایل
                         <input id="inputTag" type="file" />
@@ -298,13 +513,13 @@
                     </label>
                 </div>
             </div>
-        <!-- second comment  -->
+         <!-- second comment  -->
             <div class="comment">
                 <div class="comment-user">
                     <div class="comment-user-info">
-                        <img class="comment-user-profile" src="./images/decor.png" alt="profile">
+                        <img class="comment-user-profile" src="{% static './images/decor.png' %}" alt="profile">
                         <h5 class="comment-user-name"> سارا علیزاده</h5>
-                        <img class="comment-user-stars" src="./images/5stars.png" alt="stars">
+                        <img class="comment-user-stars" src="{% static './images/5stars.png' %}" alt="stars">
                     </div>
                     <div class="comment-user-date">
                         <p>خریدار</p>
@@ -312,17 +527,17 @@
                     </div>
                     <div class="comment-text">
                         <span> بهترینه خیلی خوبه ممنون  </span>
-                        <img src="./images/like-icon (2).png" alt="like-icon">
+                        <img src="{% static './images/like-icon (2).png' %}" alt="like-icon">
                     </div>
                     <div class="comment-input">
                         <input type="text">
-                        <img src="./images/comment-icon.png" alt="comment-icon">
+                        <img src="{% static './images/comment-icon.png' %}" alt="comment-icon">
                     </div>
                 </div>
                 <div class="comment-upload">
                     
                     <label for="inputTag" >
-                        <img class="comment-upload-icon" src="./images/download-icon.png" alt="download-icon"> <br />
+                        <img class="comment-upload-icon" src="{% static './images/download-icon.png' %}" alt="download-icon"> <br />
 
                         اپلود فایل
                         <input id="inputTag" type="file" />
@@ -331,6 +546,8 @@
                     </label>
                 </div>
             </div>
+
+        </div>
             <div class="submit-buttns">
                 <button type="submit">ثبت دیدگاه ها</button>
                 <a href="">مشاهده همه نظر ها</a>
@@ -353,8 +570,31 @@
             <!-- Swiper -->
             <div class="swiper mySwiper">
               <div class="swiper-wrapper custom-swiper-wrapper ">
-                <div class="swiper-slide custom-swiper-slide ">
-                  <img class="" src="./images/loster-card.png" alt="Card image cap">
+                
+                {% for product_list in related_products %}
+                        {% for product in product_list %}
+                        <a href="{{ product.get_absolute_url }}" class="swiper-slide custom-swiper-slide ">
+                            <img class="" src={{ product.image.url }} alt="Card image cap">
+                            <div class="body-card">
+                              <h5 class="">{{ product.title }}</h5>
+                              <div class="price-card">
+                                <span class="badge-price">
+                                  8%
+                                </span>
+                                <span class="price">
+                                    {{ product.price }}
+                                </span>
+                              </div>
+                              <p class="line-through">17,000,000</p>
+                              <p class="time">08:43:47</p>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    
+                {% endfor %}
+                
+                {% comment %} <div class="swiper-slide custom-swiper-slide ">
+                  <img class="" src="{% static './images/loster-card.png' %}" alt="Card image cap">
                   <div class="body-card">
                     <h5 class="">لوستر فلان</h5>
                     <div class="price-card">
@@ -368,45 +608,14 @@
                     <p class="line-through">17,000,000</p>
                     <p class="time">08:43:47</p>
                   </div>
-                </div>
-                <div class="swiper-slide custom-swiper-slide ">
-                  <img class="" src="./images/loster-card.png" alt="Card image cap">
-                  <div class="body-card">
-                    <h5 class="">لوستر فلان</h5>
-                    <div class="price-card">
-                      <span class="badge-price">
-                        8%
-                      </span>
-                      <span class="price">
-                        15,699,000
-                      </span>
-                    </div>
-                    <p class="line-through">17,000,000</p>
-                    <p class="time">08:43:47</p>
-                  </div>
-                </div>
-                <div class="swiper-slide custom-swiper-slide ">
-                  <img class="" src="./images/loster-card.png" alt="Card image cap">
-                  <div class="body-card">
-                    <h5 class="">لوستر فلان</h5>
-                    <div class="price-card">
-                      <span class="badge-price">
-                        8%
-                      </span>
-                      <span class="price">
-                        15,699,000
-                      </span>
-                    </div>
-                    <p class="line-through">17,000,000</p>
-                    <p class="time">08:43:47</p>
-                  </div>
-                </div>
-                <div class="swiper-slide custom-swiper-slide">Slide 4</div>
+                </div> {% endcomment %}
+                
+                {% comment %} <div class="swiper-slide custom-swiper-slide">Slide 4</div>
                 <div class="swiper-slide custom-swiper-slide">Slide 5</div>
                 <div class="swiper-slide custom-swiper-slide">Slide 6</div>
                 <div class="swiper-slide custom-swiper-slide">Slide 7</div>
                 <div class="swiper-slide custom-swiper-slide">Slide 8</div>
-                <div class="swiper-slide custom-swiper-slide">Slide 9</div>
+                <div class="swiper-slide custom-swiper-slide">Slide 9</div> {% endcomment %}
               </div>
       
               <div class="swiper-pagination"></div>
@@ -425,30 +634,30 @@
         <ul>
             <li>
                 <a href="./index.html">
-                    <img src="./images/لوگو هران 1.png" alt="">
+                    <img src="{% static './images/لوگو هران 1.png' %}" alt="">
                 </a>
             </li>
-            <li>
+            <li class="mobile-border-bottom">
                 <a href="">
                     دسترسی سریع به محصولات
                 </a>
             </li>
             <li>
-                <img src="./images/instagram.png" alt="">
+                <img src="{% static './images/instagram.png' %}" alt="">
                 <a href="">lusso.home_tehran</a>
             </li>
             <li>
-                <img src="./images/phone.png" alt="">
+                <img src="{% static './images/phone.png' %}" alt="">
                 <span>07136295234 - 09015454118</س>
             </li>
             <li class="lastLi">
                 <div class="location">
-                    <img src="./images/location.png" alt="">
+                    <img src="{% static './images/location.png' %}" alt="">
                     <span>آدرس: شیراز - خیابان عفیف آباد - مجتمع تجاری سعدی - طبقه ۴ - واحد ۳۹</span>
                 </div>
                 <div class="namads">
-                    <img src="./images/images (aeg1).png" alt="">
-                    <img src="./images/images.png" alt="">
+                    <img src="{% static './images/images (aeg1).png' %}" alt="">
+                    <img src="{% static './images/images.png' %}" alt="">
                 </div>
                 <div class="productsBtn">
 
@@ -475,13 +684,26 @@
       slidesPerGroup: 1,
       loop: true,
       loopFillGroupWithBlank: true,
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   clickable: true,
-      // },
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        // when window width is >= 1024px
+
+        1025: {
+          slidesPerView: 3,
+        },
+
+        768: {
+          slidesPerView: 2,
+        }
+        ,
+
+        320: {
+          slidesPerView: 1,
+        }
+
       },
     });
   </script>

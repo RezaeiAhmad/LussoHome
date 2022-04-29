@@ -19,7 +19,7 @@ class MainCategory(models.Model):
 class ProductCategory(models.Model):
     title = models.CharField(max_length=150, verbose_name='عنوان')
     name = models.CharField(max_length=150, verbose_name='عنوان در URL')
-    categories = models.ManyToManyField(MainCategory, blank=True, verbose_name="دسته بندی ها")
+    categories = models.CharField(max_length=150, null=True, verbose_name='دسته بندی اصلی')
 
     class Meta:
         verbose_name = 'دسته بندی'

@@ -25,3 +25,70 @@ function dropdwonShow2() {
     flash2.classList.remove("rotate");
   }
 }
+
+// ......... when click on filtering , show category and hide main .......... 
+function filtering () {
+  document.getElementById("mainId").style.display = "none";
+  document.getElementById("category-filteringId").style.display = "block";
+ 
+  
+}
+
+// ............ when click on close icon hide the category ......... 
+
+function hideCategory() {
+  document.getElementById("mainId").style.display = "block";
+  document.getElementById("category-filteringId").style.display = "none";
+  document.getElementById("therd-section-ofsidebarId").style.display ="flex";
+  document.getElementById("ordering-mobileId").style.display = "block";
+}
+
+
+// ................. show filtering in mobiel size when click on filtering .......
+function filteringMobile() {
+  document.getElementById("mainId").style.display = "none";
+  document.getElementById("category-filteringId").style.display = "block";
+document.getElementById("ordering-mobileId").style.display = "none";
+}
+
+function orderingMobile() {
+  document.getElementById("therd-section-ofsidebarId").style.display ="none";
+  document.getElementById("mainId").style.display = "none";
+  document.getElementById("category-filteringId").style.display = "block";
+}
+
+
+  // .................... header ........... 
+
+/// show dashbord when click on hamber icon
+function showDashbord () {
+  document.getElementById("dashbord").style.display = "flex";
+}
+
+/// hide dashbord when click on close icon
+function hideDashbord () {
+  document.getElementById("dashbord").style.display = "none";
+}
+/// show menu in mobile when click on profile icon
+function showMenu () {
+  document.getElementById("menu-mobile").style.display = "flex";
+}
+
+/// hide menu in mobile when click on close icon
+function hideMenu () {
+  document.getElementById("menu-mobile").style.display = "none";
+}
+/// show dashbord in mobile when click on hamber icon
+function showDashbordMobile () {
+  document.getElementById("dashbord-mobile").style.display = "flex";
+}
+
+/// hide dashbord in mobile when click on close icon
+function hideDashbordMobile () {
+  document.getElementById("dashbord-mobile").style.display = "none";
+}
+
+// ............ end of header ................
+
+
+

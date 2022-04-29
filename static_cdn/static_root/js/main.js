@@ -41,8 +41,52 @@ document.getElementById("tablebtn").addEventListener("mouseover", function () {
   });
   
 
+  // .................... header ........... 
 
 
-  ///// sliderss ..................
+/// show dashbord when click on hamber icon
+function showDashbord () {
+  document.getElementById("dashbord").style.display = "flex";
+}
 
+/// hide dashbord when click on close icon
+function hideDashbord () {
+  document.getElementById("dashbord").style.display = "none";
+}
+/// show menu in mobile when click on profile icon
+function showMenu () {
+  document.getElementById("menu-mobile").style.display = "flex";
+}
+
+/// hide menu in mobile when click on close icon
+function hideMenu () {
+  document.getElementById("menu-mobile").style.display = "none";
+}
+/// show dashbord in mobile when click on hamber icon
+function showDashbordMobile () {
+  document.getElementById("dashbord-mobile").style.display = "flex";
+}
+
+/// hide dashbord in mobile when click on close icon
+function hideDashbordMobile () {
+  document.getElementById("dashbord-mobile").style.display = "none";
+}
+
+
+
+// ............ end of header ................ 
   
+// ........ change background of header ........ 
+const navbar = document.querySelector('.nav-fixed');
+window.onscroll = () => {
+    if (window.scrollY > 300) {
+        navbar.classList.add('nav-active');
+    } else {
+        navbar.classList.remove('nav-active');
+    }
+};
+// .......... set time to carousel in hero page ......
+var myCarousel = document.querySelector('#carouselExampleSlidesOnly')
+var carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 1000,
+})

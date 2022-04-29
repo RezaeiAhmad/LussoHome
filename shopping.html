@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping</title>
+    <!-- ....... google fonts (vazir) .........  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- css style  -->
+    
+    <link rel="stylesheet" href="./assets/css/shopping.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="nav-fixed">
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a class="logo" href="./landing.html">
+                        <img src="./assets/images/لوگو هران 1.png" alt="logo">
+                    </a>
+                </li>
+    
+                <li> <a href="./landing.html">صفحه اصلی</a></li>
+                <li class="menu-my-products"> <a href="./totalProducts.html">محصولات ما</a> </li>
+                <li> <a href="">دسته بندی ها </a> </li>
+                <li class="menu-example-works"> <a href=""> نمونه کارها</a> </li>
+                <li class="menu-namayandegi"> <a href="./representation.html">اعطای نمایندگی</a></li>
+            </ul>
+    
+            <ul class="left-menu">
+                <li><img src="./assets/images/shopping-cart.png" alt="shoping-icon"></li>
+                <li class="left-menu-singup-login">
+                    <a href="./singup.html"> ورود / ثبت نام</a>
+                </li>
+                <li>
+                    <img src="./assets/images/Vector.png" alt="profile-icon" onclick="showDashbordMobile()">
+                </li>
+                <li>
+                    <img class="hamber-menu" src="./assets/images/menu.png" alt="hamber-menu-icon"
+                        onclick="showDashbord()">
+                </li>
+            </ul>
+    
+    
+        </nav>
+        <!-- .............. search Box .............  -->
+        <div class="searchBox">
+            <input class="search" type="text" name="search" id="search-input" placeholder="لوستر">
+            <button class="search_logo">
+                <img src="./assets/images/Frame.png" alt="search-icon">
+            </button>
+        </div>
+        <!-- ........ end of search box ........  -->
+    
+        <!-- ............ dashbord ..............  -->
+        <div class="dashbord" id="dashbord">
+            <img class="dashbord-close-icon desktop-width" id="close-icon" src="./assets/images/close-icon1.png"
+                alt="close-icon" onclick="hideDashbord()">
+            <img class="dashbord-profile-icon" src="./assets/images/profile-icon.png" alt="profile-icon">
+            <a href="" class="dashbord-my-profile">
+                <img class="dashbord-my-profile-icon" src="./assets/images/my-profile-icon.png" alt="profile-icon">
+                <span class="dashbord-my-profile-text">پروفایل من</span>
+            </a>
+            <a href="" class="dashbord-my-profile">
+                <img class="dashbord-my-profile-icon" src="./assets/images/3tik-icon.png" alt="3tik-icon">
+                <span class="dashbord-my-profile-text"> سفارشات من</span>
+            </a>
+            <a href="" class="dashbord-my-profile">
+                <img class="dashbord-my-profile-icon" src="./assets/images/location.png" alt="location-icon">
+                <span class="dashbord-my-profile-text"> آدرس</span>
+            </a>
+            <a href="" class="dashbord-my-profile">
+                <img class="dashbord-my-profile-icon" src="./assets/images/like-white.png" alt="like-icon">
+                <span class="dashbord-my-profile-text"> علاقمندی ها</span>
+            </a>
+            <a href="" class="dashbord-my-profile">
+                <img class="dashbord-my-profile-icon" src="./assets/images/about-us-icon.png" alt="about-us-icon">
+                <span class="dashbord-my-profile-text"> درباره ما</span>
+            </a>
+            <a href="" class="dashbord-my-profile">
+                <img class="dashbord-my-profile-icon" src="./assets/images/phone.png" alt="phone-icon">
+                <span class="dashbord-my-profile-text"> ارتباط با ما</span>
+            </a>
+            <a href="" class="last-dashbord-my-profile">
+                <img class="dashbord-my-profile-icon" src="./assets/images/exit-icon.png" alt="exit-icon">
+                <span class="dashbord-my-profile-text"> خروج از حساب کاربری </span>
+            </a>
+            <!-- ........ change dashbord on tablet size .......  -->
+            <a href="" class="tablet-dashbord-my-profile">
+                <span class="dashbord-my-profile-text">نمونه کارها</span>
+            </a>
+            <a href="./representation.html" class="tablet-dashbord-my-profile">
+                <span class="dashbord-my-profile-text">اعطای نمایندگی</span>
+            </a>
+            <a href="./totalProducts.html" class="tablet-dashbord-my-profile">
+                <span class="dashbord-my-profile-text">محصولات ما</span>
+            </a>
+        </div>
+    
+        <!-- ....................... dashbord in mobile ..............  -->
+        <div class="dashbord-mobile" id="dashbord-mobile">
+            <div class="dashbord-mobile-icons">
+                <img class="" src="./assets/images/profile-icon.png" alt="profile-icon">
+                <img id="close-icon" src="./assets/images/close-icon1.png" alt="close-icon"
+                    onclick="hideDashbordMobile()">
+            </div>
+            <div class="dashbord-mobile-container">
+    
+    
+                <div class="dashbord-mobile-row">
+                    <a href="" class="dashbord-my-profile">
+                        <img class="dashbord-my-profile-icon" src="./assets/images/my-profile-icon.png"
+                            alt="profile-icon">
+                        <span class="dashbord-my-profile-text">پروفایل من</span>
+                    </a>
+                    <a href="" class="dashbord-my-profile justify-content-around mobile-padding-right">
+                        <img class="dashbord-my-profile-icon dashbord-mobile-about-us"
+                            src="./assets/images/about-us-icon.png" alt="about-us-icon">
+                        <span class="dashbord-my-profile-text margin-right-mobile"> درباره ما</span>
+                    </a>
+                </div>
+                <div class="dashbord-mobile-row">
+                    <a href="" class="dashbord-my-profile">
+                        <img class="dashbord-my-profile-icon" src="./assets/images/3tik-icon.png" alt="3tik-icon">
+                        <span class="dashbord-my-profile-text"> سفارشات من</span>
+                    </a>
+                    <a href="" class="dashbord-my-profile justify-content-around mobile-padding-right">
+                        <img class="dashbord-my-profile-icon" src="./assets/images/phone.png" alt="phone-icon">
+                        <span class="dashbord-my-profile-text margin-right-mobile"> ارتباط با ما</span>
+                    </a>
+                </div>
+                <div class="dashbord-mobile-row">
+                    <a href="" class="dashbord-my-profile">
+                        <img class="dashbord-my-profile-icon" src="./assets/images/location.png" alt="location-icon">
+                        <span class="dashbord-my-profile-text"> آدرس</span>
+                    </a>
+                    <a href="" class="dashbord-my-profile  justify-content-around mobile-padding-right">
+                        <img class="dashbord-my-profile-icon  exit-mobile" src="./assets/images/exit-icon.png"
+                            alt="exit-icon">
+                        <span class="dashbord-my-profile-text"> خروج از حساب کاربری </span>
+                    </a>
+                </div>
+                <div class="dashbord-mobile-row">
+                    <a href="" class="dashbord-my-profile border-0">
+                        <img class="dashbord-my-profile-icon" src="./assets/images/like-white.png" alt="like-icon">
+                        <span class="dashbord-my-profile-text"> علاقمندی ها</span>
+                    </a>
+                    <a href="" class="last-dashbord-my-profile">
+    
+                    </a>
+                </div>
+    
+    
+                <div class="hr-bettwen-mobile"></div>
+            </div>
+        </div>
+    
+    
+    
+        <!-- ................... show menu in mobile .....................  -->
+        <div class="dashbord menu-mobile" id="menu-mobile">
+            <img class="dashbord-close-icon" id="close-icon" src="./assets/images/close-icon1.png" alt="close-icon"
+                onclick="hideMenu()">
+            <img class="dashbord-profile-icon" src="./assets/images/profile-icon.png" alt="profile-icon">
+            <a href="./landing.html" class="dashbord-my-profile">
+    
+                <span class="dashbord-my-profile-text"> صفحه اصلی</span>
+            </a>
+            <a href="./totalProducts.html" class="dashbord-my-profile">
+    
+                <span class="dashbord-my-profile-text"> محصولات ما</span>
+            </a>
+            <a href="" class="dashbord-my-profile">
+    
+                <span class="dashbord-my-profile-text"> دسته بندی ها</span>
+            </a>
+            <a href="" class="dashbord-my-profile">
+    
+                <span class="dashbord-my-profile-text"> نمونه کارها</span>
+            </a>
+            <a href="./representation.html" class="last-dashbord-my-profile">
+    
+                <span class="dashbord-my-profile-text"> اعطای نمایندگی </span>
+            </a>
+            <!-- ........ change dashbord on tablet size .......  -->
+            <a href="" class="tablet-dashbord-my-profile tablet">
+                <span class="dashbord-my-profile-text">نمونه کارها</span>
+            </a>
+            <a href="./representation.html" class="tablet-dashbord-my-profile tablet">
+                <span class="dashbord-my-profile-text">اعطای نمایندگی</span>
+            </a>
+            <a href="./totalProducts.html" class="tablet-dashbord-my-profile tablet">
+                <span class="dashbord-my-profile-text">محصولات ما</span>
+            </a>
+        </div>
+    
+    </header>
+
+    <main>
+<!-- .......... just show in mobile size ..........  -->
+<section class="heroSection-in-mobile">
+    <nav class="heroSection-in-mobile-nav">
+      <img class="heroSection-in-mobile-nav-logo" src="./assets/images/لوگو هران 1.png" alt="losso-logo">
+      <div class="heroSection-in-mobile-nav-icons">
+        <img src="./assets/images/Vector.png" alt="profile-icon" onclick="showDashbordMobile()" >
+        <img class="hamber-menu" src="./assets/images/menu.png" alt="hamber-menu-icon" onclick="showMenu()">
+      </div>
+    </nav>
+    <div class="heroSection-in-mobile-text">
+      <h1>لورم ایپسوم</h1>
+      <h3>طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه</h3>
+    </div>
+    <div>
+      <img class="heroBg-mobile" src="./assets/images/bgHero-mobile.png" alt="hero-img">
+      <div class="searchBox-mobile">
+        <input class="search-mobile" type="text" name="search" id="search-input" placeholder="لوستر">
+        <button class="search_logo-mobile">
+            <img src="./assets/images/Frame.png" alt="">
+        </button>
+    </div>
+    
+    </div>
+    <div class="mobile-bottom-nav">
+      <a href="">دسته بندی ها</a>
+      <div class="like-hr-mobile"></div>
+      <a href="">
+        <img src="./assets/images/Vector.png" alt="profile-icon">
+      </a>
+      <div class="like-hr-mobile"></div>
+      <a href="">
+        <img src="./assets/images/shopping-cart.png" alt="shoping-card">
+      </a>
+    </div>
+  </section>
+  <!-- ..... end of menu in mobile ....  -->
+        <!-- ------- address sectoin -------- -->
+        <section class="address">
+            <div class="address-info">
+                <p>آدرس تحویل سفارش:</p>
+                <div class="address-location">
+                    <img src="./assets/images/location-address.png" alt="location-icon">
+                    <span>تهران, منطقه 3 , سئول ,کوچه 5 پلاک 10</span>
+                </div>
+                <p class="address-name">سارا علیزاده</p>
+            </div>
+            <div class="change-address">
+                <a href="">ویرایش آدرس</a>
+                <img src="./assets/images/flash-icon.png" alt="flash-icon">
+            </div>
+        </section>
+        <!-- ----------------- end of address section --------- -->
+
+        <!-- ............ product section ---------------- -->
+        <section class="product">
+            <div class="product-details">
+                <div class="product-info">
+                    <img class="product-info-image" src="./assets/images/camera-slider-img.png" alt="camera">
+                    <div class="product-details-text">
+                        <h1 class="product-details-text-title">آباژور کد133</h1>
+                        <div class="product-details-color">
+                            <span>رنگ بدنه:</span>
+                            <span class="product-color-text">مشکی</span>
+                            <span id="black"></span>
+                        </div>
+                        <div class="product-details-color">
+                            <span> رنگ نور:</span>
+                            <span class="product-color-text">آفتابی</span>
+                        </div>
+                        <div class="product-details-price">
+                            <div class="product-details-price-text">قیمت :</div>
+                            <div class="product-details-number">
+                                <span>تومان</span>
+                                <h4>4,580,000</h4>
+                            </div>
+                        </div>
+                        <div class="product-details-price">
+                            <div class="product-details-price-text">
+                                <img src="./assets/images/price-send-with-car.png" alt="car-icon">
+                                <span class="send-price">هزینه ارسال</span>
+                            </div>
+                            <div class="product-details-number">
+                                <span>تومان</span>
+                                <h4>100,000</h4>
+                            </div>
+                        </div>
+                        <div class="count-product-number">
+                            <span class="count-up">+</span>
+                            <span>1</span>
+                            <span class="count-down">-</span>
+                        </div>
+                    </div>
+                    <div class="send-product-time">
+                        <div class="send-product-time-first">
+                            <img src="./assets/images/time-icon.png" alt="time-icon">
+                            <span> زمان ارسال:</span>
+                        </div>
+                        <p class="days-work-p">طی 10 روز کاری آینده ارسال میشود.</p>
+                        <p class="last-send-product-time">هزینه ارسال بر اساس آدرس,زمان تحویل,وزن و حجم مرسوله محاسبه می شود.</p>
+                    </div>
+                </div>
+
+                <div class="send-product-time-1024">
+                    <div class="send-product-time-first-1024">
+                        <img src="./assets/images/time-icon.png" alt="time-icon">
+                        <span> زمان ارسال:</span>
+                    </div>
+                    <p class="days-work-p-1024">طی 10 روز کاری آینده ارسال میشود.</p>
+                    <p class="last-send-product-time-1024">هزینه ارسال بر اساس آدرس,زمان تحویل,وزن و حجم مرسوله محاسبه می شود.</p>
+                </div>
+
+                <div class="product-warning">
+                    <a href="">بازگشت به سبد خرید</a>
+                    <div>
+                        <img src="./assets/images/help.png" alt="help-icon">
+                        <span>این سفارش در چند نوبت (مرسوله) ارسال می‌شود چون شامل کالای سوپرمارکتی، سنگین یا روش ارسال
+                            متفاوت است</span>
+                    </div>
+                </div>
+                <!-- ...... just show in mobile size ............  -->
+                <div class="product-checkout-mobile">
+                  <div class="product-checkout-number-mobile">
+                      <span>تعداد محصولات:</span>
+                      <span>1 عدد</span>
+                  </div>
+                  <p class="product-checkout-kind-send-mobile">نحوه ارسال:</p>
+                  <div class="product-checkout-kind-send-imgs-mobile">
+                      <img src="./assets/images/post.png" alt="post-icon">
+                      <img src="./assets/images/fhdh.png" alt="fhdh-icon">
+                      <img src="./assets/images/chapar 1.png" alt="chaper-icon">
+                      <img src="./assets/images/ebs.png" alt="ebs-icon">
+                  </div>
+                  <div class="product-checkout-price-mobile">
+                      <div class="product-checkout-price-text-mobile">
+                          <img src="./assets/images/price-send-with-car.png" alt="car-icon">
+                          <span class="send-price-mobile">هزینه ارسال</span>
+                      </div>
+                      <div class="product-checkout-number2-mobile">
+                          <span>تومان</span>
+                          <h4>100,000</h4>
+                      </div>
+                  </div>
+                  <p class="product-checkout-totall-price-text-mobile">مجموع هزینه ها:</p>
+                  <div class="product-checkout-totall-price-mobile">
+                      <span>تومان</span>
+                      <span class="product-checkout-totall-price-number-mobile">4,680,000</span>
+                  </div>
+                  <button type="submit" class="product-checkout-totall-price-btn-mobile">ادامه</button>
+              </div>
+              <div class="countinueBtn-fixed-bottom" id="countinueBtn-fixed-bottom">
+                <div class="container-fixed-btn-price">
+                  <p class="product-checkout-totall-price-text-mobile">مجموع هزینه ها:</p>
+                  <div class="product-checkout-totall-price-mobile">
+                      <span>تومان</span>
+                      <span class="product-checkout-totall-price-number-mobile">4,680,000</span>
+                  </div>
+                </div>
+                <button type="submit" class="product-checkout-totall-price-btn-mobile">ادامه</button>
+              </div>
+
+              <!-- ......... end of just show in mobile ........  -->
+            </div>
+            <div class="product-checkout">
+                <div class="product-checkout-number">
+                    <span>تعداد محصولات:</span>
+                    <span>1 عدد</span>
+                </div>
+                <p class="product-checkout-kind-send">نحوه ارسال:</p>
+                <div class="product-checkout-kind-send-imgs">
+                    <img src="./assets/images/post.png" alt="post-icon">
+                    <img src="./assets/images/fhdh.png" alt="fhdh-icon">
+                    <img src="./assets/images/chapar 1.png" alt="chaper-icon">
+                    <img src="./assets/images/ebs.png" alt="ebs-icon">
+                </div>
+                <div class="product-checkout-price">
+                    <div class="product-checkout-price-text">
+                        <img src="./assets/images/price-send-with-car.png" alt="car-icon">
+                        <span class="send-price">هزینه ارسال</span>
+                    </div>
+                    <div class="product-checkout-number2">
+                        <span>تومان</span>
+                        <h4>100,000</h4>
+                    </div>
+                </div>
+                <p class="product-checkout-totall-price-text">مجموع هزینه ها:</p>
+                <div class="product-checkout-totall-price">
+                    <span>تومان</span>
+                    <span class="product-checkout-totall-price-number">4,680,000</span>
+                </div>
+                <button type="submit" class="product-checkout-totall-price-btn">ادامه</button>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <ul>
+            <li>
+                <a href="./index.html">
+                    <img src="./assets/images/لوگو هران 1.png" alt="">
+                </a>
+            </li>
+            <li class="mobile-border-bottom">
+                <a href="">
+                    دسترسی سریع به محصولات
+                </a>
+            </li>
+            <li>
+                <img src="./assets/images/instagram.png" alt="">
+                <a href="">lusso.home_tehran</a>
+            </li>
+            <li>
+                <img src="./assets/images/phone.png" alt="">
+                <span>07136295234 - 09015454118</س>
+            </li>
+            <li class="lastLi">
+                <div class="location">
+                    <img src="./assets/images/location.png" alt="">
+                    <span>آدرس: شیراز - خیابان عفیف آباد - مجتمع تجاری سعدی - طبقه ۴ - واحد ۳۹</span>
+                </div>
+                <div class="namads">
+                    <img src="./assets/images/images (aeg1).png" alt="">
+                    <img src="./assets/images/images.png" alt="">
+                </div>
+                <div class="productsBtn">
+
+                    <button>مشاهده محصولات</button>
+                </div>
+            </li>
+            <li class="description">
+                <p> کلیه حقوق مادی و معنوی وبسایت متعلق به Lusso Home است.
+                    طراحی و توسعه توسط
+                    <span>وب آرکا</span>
+                </p>
+            </li>
+        </ul>
+    </footer>
+    <script src="./assets/Js/shoping.js"></script>
+</body>
+
+</html>

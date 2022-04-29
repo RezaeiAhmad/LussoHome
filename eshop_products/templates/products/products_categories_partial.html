@@ -1,4 +1,5 @@
-<h2>دسته بندی محصولات</h2>
+{% load static %}
+{% comment %} <h2>دسته بندی محصولات</h2>
 <div class="panel-group category-products" id="accordian">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -12,4 +13,28 @@
             </div>
         </div>
     {% endfor %}
-</div><!--/category-productsr-->
+</div> {% endcomment %}
+<!--/category-productsr-->
+
+{% for maincategory in maincategories %}
+<div class="">
+    <div onclick="dropdwonShow1()" class="first-section-ofsidebar-child " id="dropdown1"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <p>{{ maincategory.title }}</p>
+        <img src="{% static './images/flash.png' %}" id="flash1" alt="">
+    </div>
+    <ul class="dropdown-menu-show" id="dropdown-menu-show1" aria-labelledby="dropdownMenuButton1">
+        {% for category in categories %}
+            {% if category.categories == maincategory.title %}
+                <li><a href="/products/{{ category.name }}" class="dropdown-item dropdown-menu-show-li" href="#">{{category.title}}</a></li>
+            {% endif %}
+        {% endfor %}
+        
+        {% comment %} <li><a class="dropdown-item dropdown-menu-show-li" href="#">آباژور </a></li>
+        <li><a class="dropdown-item dropdown-menu-show-li" href="#">آویز </a></li>
+        <li><a class="dropdown-item dropdown-menu-show-li" href="#">لامپ</a></li>
+        <li><a class="dropdown-item dropdown-menu-show-li" href="#">چراغ دیواری </a></li>
+        <li><a class="dropdown-item dropdown-menu-show-li" href="#">چراغ سقفی </a></li> {% endcomment %}
+    </ul>
+</div>
+{% endfor %}

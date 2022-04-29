@@ -10,17 +10,60 @@ body {
     max-width: 100vw;
     width: 100vw;
     overflow-x: hidden;
+    font-family: 'Vazirmatn', sans-serif !important;
+}
 
-
+/* ........... swiper style .............  */
+html,
+body {
+    position: relative;
+    height: 100%;
 }
 
 
+
+.swiper {
+    width: 57%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ......... end of swiper style .......... */
+
+/* ........... header .........  */
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
+
 
 header {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -33,6 +76,11 @@ header {
     direction: rtl;
     align-items: flex-end;
     padding-bottom: 20px;
+}
+
+.nav-active {
+    background-color: rgba(0, 0, 0, 0.575);
+    z-index: 3;
 }
 
 nav {
@@ -61,9 +109,17 @@ nav ul {
     width: 20%;
 }
 
+.left-menu li {
+    cursor: pointer;
+}
+
 .left-menu a {
     color: #fff;
     text-decoration: none;
+}
+
+.left-menu a:hover {
+    color: #fff;
 }
 
 li {
@@ -131,6 +187,73 @@ li {
     opacity: 1;
 }
 
+.hamber-menu {
+    cursor: pointer;
+}
+.left-menu img{
+    cursor: pointer;
+}
+
+/* ////////// dashbord ////////////  */
+.dashbord {
+    width: 30%;
+    height: 700px;
+    background-color: #242424;
+    position: absolute;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    padding: 30px 50px;
+}
+
+.dashbord-close-icon {
+    width: 16%;
+    height: 7%;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.dashbord-profile-icon {
+    width: 43%;
+    border-radius: 50%;
+    margin: 20px 0px 50px 0px;
+}
+
+.dashbord-my-profile {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin: 5px 0px;
+    width: 100%;
+}
+
+.dashbord-my-profile span,
+.last-dashbord-my-profile span {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.last-dashbord-my-profile {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    margin: 5px 0px;
+    width: 100%;
+}
+
+.tablet-dashbord-my-profile {
+    display: none;
+}
+
+.dashbord-mobile {
+    display: none;
+}
+
+/* .... end of header .......  */
+
 
 
 .imageloster {
@@ -138,6 +261,11 @@ li {
     height: auto;
 
 }
+
+.heroSection-in-mobile {
+    display: none;
+}
+
 
 
 .heroSection {
@@ -148,6 +276,7 @@ li {
     z-index: 1;
     display: flex;
     flex-direction: column;
+    z-index: 0;
     justify-content: flex-end;
 }
 
@@ -173,6 +302,14 @@ li {
     font-size: 20px;
     margin-top: 20px;
     font-weight: lighter;
+}
+
+.lightin-loster-mobile {
+    display: none;
+}
+
+.lighting-in-mobile {
+    display: none;
 }
 
 .Lighting {
@@ -484,12 +621,9 @@ li {
 
 .custom-swiper-slide {
     height: 400px;
-    border-radius: 9px;
+    border-radius: 5px;
     border: 2px solid rgb(27, 27, 27);
     padding: 40px;
-
-
-
     display: flex;
     flex-direction: column;
 }
@@ -551,9 +685,12 @@ li {
     justify-content: end;
 }
 
+.co-workers-in-mobile {
+    display: none;
+}
+
 .co-workers {
     width: 100%;
-    /* height: 300px; */
 }
 
 .co-workers-box {
@@ -604,9 +741,9 @@ footer a {
     color: #fff;
 }
 
-
-
-
+footer a:hover {
+    color: #fff;
+}
 
 .lastLi {
     display: flex;
@@ -637,11 +774,1183 @@ footer a {
     border-radius: 5px;
     padding: 5px 20px;
 }
-.description{
+
+.description {
     margin: auto;
     width: 39%;
     text-align: center;
 }
-.description span{
+
+.description span {
     color: #FF9B25;
+}
+/* ..... end of footer .........  */
+.menu-mobile {
+    top: 0;
+    left: 0;
+    width: 60%;
+    padding: 30px;
+}
+
+
+
+.tablet {
+    display: none;
+}
+
+.dashbord-mobile {
+    width: 100%;
+    height: 663px;
+    background-color: #242424;
+    position: absolute;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    padding: 50px 100px;
+}
+
+.dashbord-mobile-icons img {
+    width: 7%;
+}
+
+
+
+.dashbord-mobile-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.dashbord-mobile-container {
+    margin-top: 100px;
+}
+
+.hr-bettwen-mobile {
+    height: 233px;
+    border-right: 1px solid #fff;
+    width: 1px;
+    position: absolute;
+    margin-top: -239px;
+    margin-right: 559px;
+}
+
+.dashbord-mobile-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashbord-mobile-row a {
+    justify-content: flex-start !important;
+    font-size: 20px;
+}
+
+.exit-mobile {
+    margin-right: 0px;
+}
+
+/* ............ Responsive ...........  */
+
+@media only screen and (max-width: 1280px) and (min-width:1024px) {
+    .Lighting-abazhor button {
+        z-index: 1;
+        margin-left: -135px;
+        background-color: rgb(126, 123, 123);
+    }
+
+    .custom-swiper-button-next {
+        top: 153rem;
+        right: 220px;
+        color: #000;
+    }
+
+    .custom-swiper-button-left {
+        top: 153rem;
+        left: 220px;
+        color: #000;
+    }
+
+    .hr-bettwen-mobile {
+        margin-right: 493px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
+    /* .......... header .........  */
+    .menu {
+        width: 40%;
+    }
+
+    .menu-my-products,
+    .menu-namayandegi,
+    .menu-example-works {
+        display: none;
+    }
+
+    .left-menu-singup-login {
+        display: none;
+    }
+
+    .dashbord {
+        width: 30%;
+    }
+
+    .dashbord-close-icon {
+        width: 29%;
+    }
+
+    .dashbord-profile-icon {
+        width: 56%;
+        margin: 20px auto 50px auto;
+    }
+
+    .hr-bettwen-mobile {
+        height: 233px;
+        border-right: 1px solid #fff;
+        width: 1px;
+        position: absolute;
+        margin-top: -239px;
+        margin-right: 379px;
+    }
+
+    .tablet-dashbord-my-profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin: 5px 0px;
+        width: 100%;
+        color: white;
+
+    }
+
+    /* .......... end of header .........  */
+
+    /* //// hero content ////////  */
+    .heroSection {
+        margin-top: -31rem;
+        width: 54%;
+        z-index: 0;
+    }
+
+    .heroSection h1 {
+        font-size: 45px;
+    }
+
+    .heroSection h2 {
+        font-size: 17px;
+    }
+
+    .heroSection h3 {
+        font-size: 14px;
+    }
+
+    /* ........ end of hero section ........  */
+    /* .......... lighting .........  */
+    .loster-img {
+        margin-top: -195px;
+
+    }
+
+    .abazhor {
+        margin-top: -131px;
+    }
+
+
+    .Lighting-abazhor button {
+        margin-left: -109px;
+
+    }
+
+    /* ........ end of lighting section ........  */
+
+    /* .......... category section .........  */
+
+    .category {
+        padding: 50px 18%;
+    }
+
+    /* //// end of category ////////// */
+
+    /* ////////////// sliders ///////////  */
+    .swiper-slide img {
+        width: 95%;
+    }
+
+    .time {
+        margin-top: -12px;
+    }
+
+    .custom-swiper-button-next {
+        top: 143rem;
+        right: 120px;
+    }
+
+    .custom-swiper-button-left {
+        top: 143rem;
+        left: 120px;
+    }
+
+
+
+}
+
+@media only screen and (max-width:912px) and (min-width:850px) {
+   /* .......... related to header .......  */
+    .hr-bettwen-mobile {
+        margin-right: 18rem;
+    }
+      /* .......... end of related to header .......  */
+
+    .Lighting-abazhor button {
+        margin-left: -80px;
+    }
+
+    .custom-swiper-button-left {
+        top: 141rem;
+        left: 120px;
+    }
+
+    .custom-swiper-button-next {
+        top: 141rem;
+        right: 120px;
+    }
+}
+
+
+@media only screen and (max-width:850px) and (min-width:768px) {
+    .heroSection {
+        margin-top: -25rem;
+        width: 54%;
+        z-index: 0;
+    }
+
+    .loster-img {
+        margin-top: -183px;
+    }
+
+    .Lighting-abazhor button {
+        margin-left: -82px;
+    }
+
+    .custom-swiper-button-left {
+        top: 138rem;
+        left: 120px;
+    }
+
+    .custom-swiper-button-next {
+        top: 138rem;
+        right: 120px;
+    }
+/* .......... end of related to header ..........  */
+    .tablet-dashbord-my-profile {
+        display: none;
+    }
+
+    .hr-bettwen-mobile {
+        margin-right: 266px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* ......... header ..........  */
+    .menu {
+        width: 48%;
+    }
+
+    /* //// hero content ////////  */
+    .heroSection {
+        z-index: 0;
+        margin-top: -26rem;
+        width: 54%;
+    }
+
+    .heroSection h1 {
+        font-size: 38px;
+    }
+
+    .search_logo {
+        padding: 23px 0px;
+    }
+
+    .dashbord-close-icon {
+        width: 34%;
+    }
+
+    .dashbord-profile-icon {
+        width: 75%;
+    }
+
+    /* ........ end of hero section ........  */
+
+
+    /* .......... lighting .........  */
+    .Lighting-loster {
+        margin-top: 65px;
+
+    }
+
+    .loster-img {
+        margin-top: -180px;
+    }
+
+    .Lighting-abazhor button {
+        margin-left: -81px;
+    }
+
+    .Lighting-loster button:hover {
+        margin-right: -75px;
+    }
+
+    .abazhor {
+        margin-top: -82px;
+    }
+
+
+    /* ........ end of lighting section ........  */
+    .category {
+        margin-top: 100px;
+    }
+
+    /* .......... sliders section ........  */
+    .catgory-buttonsBox button {
+        width: 30%;
+    }
+
+    .custom-swiper-button-left {
+        top: 127rem;
+        left: 75px;
+    }
+
+    .custom-swiper-button-next {
+        top: 127rem;
+        right: 75px;
+    }
+
+    .menu-mobile {
+        top: 0;
+        left: 0;
+        width: 60%;
+        padding: 30px;
+    }
+
+
+
+    .tablet {
+        display: none;
+    }
+
+    .dashbord-mobile {
+        width: 100%;
+        height: 432px;
+        background-color: #242424;
+        position: absolute;
+        z-index: 2;
+        display: none;
+        flex-direction: column;
+        padding: 50px;
+    }
+
+
+    .dashbord-mobile-icons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashbord-mobile-icons img {
+        width: 10%;
+    }
+
+    .dashbord-mobile-container {
+        margin-top: 50px;
+
+
+    }
+
+    .hr-bettwen-mobile {
+        height: 233px;
+        border-right: 1px solid #fff;
+        width: 1px;
+        position: absolute;
+        margin-top: -239px;
+        margin-right: 290px;
+
+    }
+
+    .dashbord-mobile-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dashbord-mobile-row a {
+        justify-content: flex-start !important;
+        font-size: 13px;
+    }
+
+    .exit-mobile {
+        margin-right: 0px;
+    }
+
+}
+
+@media only screen and (max-width: 540px) and (min-width:425px) {
+   
+    .menu {
+        width: 57%;
+        font-size: 13px;
+    }
+    .dashbord {
+        width: 46%;
+    }
+
+    .hr-bettwen-mobile {
+        margin-right: 187px;
+    } 
+    /* ............ end of header .......  */
+
+    .heroSection {
+        z-index: 0;
+        margin-top: -18rem;
+        width: 54%;
+    }
+
+    .heroSection h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .search {
+        padding: 15px;
+    }
+
+    .search_logo {
+        padding: 15px 0px;
+    }
+
+    .heroSection h2 {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .heroSection h3 {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .loster-img {
+        margin-top: -164px;
+    }
+
+    .Lighting-loster {
+        margin-top: 65px;
+        width: 128%;
+    }
+
+    .Lighting-abazhor {
+        width: 98%;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        justify-content: center;
+        margin-top: -54px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .abazhor {
+        margin-top: -82px;
+        width: 25%;
+        margin-left: 19px;
+    }
+
+    .category {
+        padding: 50px 5%;
+    }
+
+    .catgory-buttonsBox {
+        width: 95%;
+    }
+
+    .swiper-slide img {
+        width: 77%;
+    }
+
+    .custom-swiper-button-left {
+        top: 118rem;
+        left: 75px;
+    }
+
+    .custom-swiper-button-next {
+        top: 118rem;
+        right: 75px;
+    }
+
+
+
+
+}
+
+@media only screen and (max-width: 425px) {
+    header nav {
+        display: none;
+    }
+
+    .heroSection {
+        display: none;
+    }
+
+    #carouselExampleSlidesOnly {
+        display: none;
+    }
+
+    .heroSection-in-mobile {
+        display: block;
+        background-image: linear-gradient(180deg, #242424,
+                #362727);
+        height: 280px;
+    }
+
+    .heroSection-in-mobile-nav {
+        padding: 20px 10px 0px 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .heroSection-in-mobile-nav-logo {
+        width: 20%;
+    }
+
+    .heroSection-in-mobile-text {
+        margin-top: -27px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .heroSection-in-mobile-text h3 {
+        font-size: 16px;
+        font-weight: 300;
+        width: 66%;
+        margin: auto;
+        padding: 20px 0px;
+    }
+
+    .heroBg-mobile {
+        width: 100%;
+        height: 100px;
+    }
+
+    /* ...........Search Box .............. */
+    .searchBox-mobile {
+        display: flex;
+        align-items: center;
+        width: 60%;
+        margin: -80px auto 0px auto;
+
+    }
+
+    .search-mobile {
+        width: 88%;
+        border: none;
+        border-radius: 0 15px 15px 0;
+        background-color: #fff;
+        height: 10px;
+        padding: 15px;
+        text-align: justify;
+    }
+
+
+    .search_logo-mobile {
+        background-color: #fff;
+        height: 30px;
+        padding: 15px;
+        ;
+        border: none;
+        border-radius: 15px 0 0 15px;
+        display: flex;
+        justify-content: space-around;
+        outline: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .search_logo-mobile img {
+        width: 70%;
+        opacity: 1;
+    }
+
+    .mobile-bottom-nav {
+        background: url("/assets/images/bg-hero-gradiant.png");
+        height: 42px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+
+    }
+
+    .mobile-bottom-nav a {
+        color: #fff;
+    }
+
+    .like-hr-mobile {
+        height: 20px;
+        width: 1px;
+        border-right: .1px solid #FDFDFD;
+    }
+
+
+    .Lighting {
+        display: none;
+    }
+
+    .lighting-in-mobile {
+        display: block;
+    }
+
+    .lightin-loster-mobile {
+        display: flex;
+        flex-direction: column;
+        background: url("/assets/images/lighting-loster-mobile-bg.png");
+        height: 137px;
+        margin-top: 109px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+
+    }
+
+    .loster-img {
+        margin-top: -46px;
+        width: 28%;
+    }
+
+
+    .lightin-loster-mobile-tilte {
+        width: 100%;
+        text-align: center;
+        margin-top: 19px;
+        text-shadow: 0px 1px 12px #FFFFFF;
+        color: #fff;
+    }
+
+    .Lighting-loster-btn-mobile {
+        display: flex;
+        width: 90%;
+        align-items: center;
+        margin-bottom: 20px;
+        margin: 0px auto;
+    }
+
+    .Lighting-loster-btn-mobile hr {
+        width: 24%;
+        color: #fff !important;
+        opacity: 1;
+        margin-right: 10rem;
+
+    }
+
+    .Lighting-loster-btn-mobile button {
+        width: 30%;
+        padding: 2px 5px;
+        color: #fff;
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        box-shadow: 1px 1px 11px 2px #ffffff;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .Lighting-loster-btn-mobile button:hover {
+        transition: all 3s ease-in-out;
+        margin-right: -70px;
+        z-index: 1;
+        background-color: rgb(126, 123, 123);
+
+
+    }
+
+    .abazhor-img {
+        width: 28%;
+        margin-top: 99px;
+        left: 27px;
+    }
+
+    .lightin-abazhor-mobile {
+        display: flex;
+        flex-direction: column;
+        background: url("/assets/images/lighting-loster-mobile-bg.png");
+        height: 137px;
+        margin-top: 69px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 90px;
+
+
+    }
+
+    .lightin-abazhor-mobile-tilte {
+        width: 100%;
+        text-align: start;
+        padding-right: 62px;
+        margin-top: 19px;
+        text-shadow: 0px 1px 12px #ffffff;
+        color: #fff;
+    }
+
+    .Lighting-abazhor-btn-mobile {
+        display: flex;
+        width: 90%;
+        align-items: center;
+        margin-bottom: 20px;
+        margin: 0px auto;
+    }
+
+    .Lighting-abazhor-btn-mobile hr {
+        width: 24%;
+        color: #fff !important;
+        opacity: 1;
+
+
+
+    }
+
+    .Lighting-abazhor-btn-mobile button {
+        width: 30%;
+        padding: 2px 5px;
+        color: #fff;
+        background: transparent;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        box-shadow: 1px 1px 11px 2px #ffffff;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1.5rem;
+
+    }
+
+    .Lighting-abazhor-btn-mobile button:hover {
+
+        transition: all 3s ease-in-out;
+        margin-right: 80px;
+        z-index: 1;
+        background-color: rgb(126, 123, 123);
+
+
+    }
+
+    .category {
+        display: none;
+    }
+
+    .betweenSections {
+        display: none;
+    }
+
+    .slidersSection {
+        padding-top: 50px;
+        height: 617px;
+        padding-bottom: 0px;
+    }
+
+    .catgory-buttonsBox {
+        width: 95%;
+    }
+
+    .catgory-buttonsBox button {
+        font-size: 15px;
+    }
+
+    .custom-swiper-button-left {
+        top: 73rem;
+        left: 29px;
+    }
+
+    .custom-swiper-button-next {
+        top: 73rem;
+        right: 29px;
+    }
+
+    .co-workers-in-mobile {
+        margin: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0px;
+    }
+
+    .co-workers {
+        display: none;
+    }
+
+    .co-workers-in-mobile img {
+        padding: 10px;
+    }
+
+    .border-left-mobile {
+        border-left: 1px solid #000;
+    }
+
+    .border-bottom-mobile {
+        border-bottom: 1px solid #000;
+    }
+
+    .margin-right-mobile {
+        margin-right: -3px;
+    }
+/* ....... footer ........  */
+    footer {
+        padding: 20px 25px;
+    }
+
+    footer li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 25%;
+    }
+
+    footer li img {
+        width: 10%;
+    }
+
+    .mobile-border-bottom {
+        border-bottom: 1px solid #fff;
+    }
+
+    .footer-call-info {
+        padding: 0%;
+        font-size: 14px;
+    }
+
+    .lastLi {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+    }
+
+    .location {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .namads {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .namads img {
+        width: 30%;
+    }
+
+    .productsBtn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .description {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    /* ......... end of footer ........  */
+
+    .menu-mobile {
+        top: 0;
+        left: 0;
+        width: 60%;
+        padding: 30px;
+    }
+
+    .dashbord-my-profile,
+    .last-dashbord-my-profile {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .dashbord-mobile {
+        width: 100%;
+        height: 340px;
+        background-color: #242424;
+        position: absolute;
+        z-index: 2;
+        display: none;
+        flex-direction: column;
+        padding: 30px;
+
+    }
+
+    .dashbord-close-icon {
+        width: 28%;
+    }
+
+    .dashbord-mobile-icons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashbord-mobile-icons img {
+        width: 14%;
+    }
+
+    .dashbord-mobile-container {
+        margin-top: 10px;
+
+
+    }
+
+    .hr-bettwen-mobile {
+        height: 233px;
+        border-right: 1px solid #fff;
+        width: 1px;
+        position: absolute;
+        margin-top: -239px;
+        margin-right: 149px;
+    }
+
+    .dashbord-mobile-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .dashbord-mobile-row a {
+        justify-content: flex-start;
+        font-size: 13px;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 320px) {
+    .loster-img {
+        margin-top: -51px;
+        margin-right: 27px;
+    }
+
+    .Lighting-loster-btn-mobile hr {
+        margin-right: 6rem;
+    }
+
+    .catgory-buttonsBox button {
+        font-size: 11px;
+    }
+
+    .catgory-buttonsBox {
+        display: flex;
+        justify-content: space-evenly;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 50px;
+
+    }
+
+    .swiper {
+        width: 67%;
+
+    }
+
+    .swiper-slide img {
+        width: 100%;
+    }
+
+    .custom-swiper-slide {
+        height: 320px;
+    }
+
+    .custom-swiper-button-next {
+        top: 70rem;
+        right: 13px;
+    }
+
+    .custom-swiper-button-left {
+        top: 70rem;
+        left: 13px;
+    }
+
+    .slidersSection {
+        height: 523px;
+    }
+
+    footer {
+        padding: 20px 25px;
+    }
+
+    footer li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 25%;
+    }
+
+    footer li img {
+        width: 10%;
+    }
+
+    .mobile-border-bottom {
+        border-bottom: 1px solid #fff;
+    }
+
+    .footer-call-info {
+        padding: 0%;
+        font-size: 14px;
+    }
+
+    .lastLi {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+    }
+
+    .location {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .namads {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .namads img {
+        width: 30%;
+    }
+
+    .productsBtn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .description {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-mobile {
+        top: 0;
+        left: 0;
+        width: 60%;
+        padding: 30px;
+    }
+
+    .dashbord-my-profile,
+    .last-dashbord-my-profile {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .dashbord-mobile {
+        width: 100%;
+        height: 330px;
+        background-color: #242424;
+        position: absolute;
+        z-index: 2;
+        display: none;
+        flex-direction: column;
+        padding: 30px 10px;
+
+    }
+
+    .dashbord-mobile-icons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dashbord-close-icon {
+        width: 34%;
+    }
+
+    .dashbord-mobile-icons img {
+        width: 18%;
+    }
+
+    .dashbord-mobile-container {
+        margin-top: 10px;
+
+
+    }
+
+    .hr-bettwen-mobile {
+        height: 233px;
+        border-right: 1px solid #fff;
+        width: 1px;
+        position: absolute;
+        margin-top: -239px;
+        margin-right: 149px;
+    }
+
+    .dashbord-mobile-row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .dashbord-mobile-row a {
+        justify-content: flex-start;
+        font-size: 13px;
+    }
+
+    .mobile-padding-right {
+        padding-right: 15px;
+    }
+
+    .margin-right-mobile {
+        margin-right: 17px !important;
+    }
+
+
+
 }

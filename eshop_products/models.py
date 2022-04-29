@@ -56,6 +56,15 @@ class Product(models.Model):
     active = models.BooleanField(default=False, verbose_name='فعال / غیرفعال')
     categories = models.ManyToManyField(ProductCategory, blank=True, verbose_name="دسته بندی ها")
     visit_count = models.IntegerField(default=0, verbose_name='تعداد بازدید')
+    weight = models.IntegerField(verbose_name='وزن', null=True, blank=True,)
+    size = models.CharField(max_length=150, verbose_name='ابعاد', null=True, blank=True,)
+    color = models.CharField(max_length=150, verbose_name='رنگ', null=True, blank=True,)
+    elec = models.IntegerField(verbose_name='برق مصرفی', null=True, blank=True,)
+    light = models.IntegerField(verbose_name='میزان نور', null=True, blank=True,)
+    lightcolor = models.CharField(max_length=150, verbose_name='رنگ نور', null=True, blank=True,)
+    number = models.IntegerField(verbose_name='قیمت', null=True, blank=True)
+
+
 
     objects = ProductsManager()
 
